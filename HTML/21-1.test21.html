@@ -6,17 +6,20 @@
     <title>회원 가입</title>
     <style>
         label, input {padding: 5px;}
+        td {padding: 3px;}
+        .container3 {width: 50%; margin: auto;}
         .t-red {color: red;}
     </style>
 </head>
 <body style="margin: 40px;">
-    
-    <form action="" method="get">
+    <img src="https://picsum.photos/1000/120" alt="배경화면" width="100%">
+    <div style="container3">
+    <form action="#" method="get">
         <table style="border: 0;">
-            <tr align="left"><td colspan="2"><h1>회원가입</h1></td></tr>
+            <tr align="center" style="background-color: burlywood;"><td colspan="2"><h1>회원가입</h1></td></tr>
             <tr>
                 <td style="width: 40%;"><label for="userid">사용자 ID(<span class="t-red">*</span>)</label></td>
-                <td style="width: 60%;"><input type="text" name="userid" id="userid" 
+                <td style="width: 60%;"><input type="text" name="userid" id="userid"
                     required autofocus placeholder="아이디를 입력해주세요."></td>
             </tr>
             <tr>
@@ -34,7 +37,7 @@
             <tr>
                 <td><label for="usex">성별(<span class="t-red">*</span>)</label></td>
                 <td><input type="radio" name="usex" id="usex-m" value="남" checked>
-                    <label for="usex">남</label>
+                    <label for="usex">남</label>&nbsp;&nbsp;
                     <input type="radio" name="usex" id="usex-f" value="여">
                     <label for="usex">여</label></td>
             </tr>
@@ -58,6 +61,6 @@
             </tr>
         </table>
     </form>
-    
+    </div>
 </body>
 </html>
