@@ -6,6 +6,7 @@
     <title>회원 가입</title>
     <style>
         label, input {padding: 5px;}
+        .t-red {color: red;}
     </style>
 </head>
 <body style="margin: 40px;">
@@ -14,35 +15,35 @@
         <table style="border: 0;">
             <tr align="left"><td colspan="2"><h1>회원가입</h1></td></tr>
             <tr>
-                <td><label for="userid">사용자 ID(<span style="color: red;">*</span>)</label></td>
-                <td><input type="text" name="userid" id="userid" 
+                <td style="width: 40%;"><label for="userid">사용자 ID(<span class="t-red">*</span>)</label></td>
+                <td style="width: 60%;"><input type="text" name="userid" id="userid" 
                     required autofocus placeholder="아이디를 입력해주세요."></td>
             </tr>
             <tr>
-                <td><label for="pwd">패스워드(<span style="color: red;">*</span>)</label></td>
+                <td><label for="pwd">패스워드(<span class="t-red">*</span>)</label></td>
                 <td><input type="password" name="pwd" id="pwd" required placeholder="********"></td>
             </tr>
             <tr>
-                <td><label for="repwd">패스워드 확인(<span style="color: red;">*</span>)</label></td>
+                <td><label for="repwd">패스워드 확인(<span class="t-red">*</span>)</label></td>
                 <td><input type="password" name="repwd" id="repwd" required placeholder="********"></td>
             </tr>
             <tr>
-                <td><label for="username">이름(<span style="color: red;">*</span>)</label></td>
+                <td><label for="username">이름(<span class="t-red">*</span>)</label></td>
                 <td><input type="text" name="username" id="username" required placeholder="홍길동"></td>
             </tr>
             <tr>
-                <td><label for="usex">성별(<span style="color: red;">*</span>)</label></td>
+                <td><label for="usex">성별(<span class="t-red">*</span>)</label></td>
                 <td><input type="radio" name="usex" id="usex-m" value="남" checked>
                     <label for="usex">남</label>
                     <input type="radio" name="usex" id="usex-f" value="여">
                     <label for="usex">여</label></td>
             </tr>
             <tr>
-                <td><label for="uemail">이메일(<span style="color: red;">*</span>)</label></td>
+                <td><label for="uemail">이메일(<span class="t-red">*</span>)</label></td>
                 <td><input type="email" name="uemail" id="uemail" required></td>
             </tr>
             <tr>
-                <td><label for="utel">전화번호(<span style="color: red;">*</span>)</label></td>
+                <td><label for="utel">전화번호(<span class="t-red">*</span>)</label></td>
                 <td><input type="tel" name="utel" id="utel" required placeholder="010-123-1234"
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></td>
             </tr>
