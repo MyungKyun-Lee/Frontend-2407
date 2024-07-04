@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Border</title>
     <style>
-        p {padding: 5px;}
+        p {padding: 3px;}
         p.dotted {border-style: dotted; border-width: 5px;}
         p.dashed {border-style: dashed; border-width: medium;}
         p.solid {border-style: solid; border-width: thick;}
@@ -20,12 +20,12 @@
     </style>
 </head>
 <body style="margin: 40px;">
-    <h2>The border-style Property</h2>
+    <h2 class="dotted">The border-style Property</h2> <!-- 태그명이 틀려서 클래스 스타일이 적용 안됨 -->
     <p>This property specifies what kind of border to display:</p>
 
-    <p class="dotted">A dotted border. 5px</p>
-    <p class="dashed">A dashed border.</p>
-    <p class="solid">A solid border.</p>
+    <p class="dotted">A dotted 5px border.</p>
+    <p class="dashed">A dashed medium border.</p>
+    <p class="solid">A solid thick border.</p>
     <p class="double">A double border.</p>
     <p class="groove">A groove border.</p>
     <p class="ridge">A ridge border.</p>
@@ -34,6 +34,6 @@
     <p class="none">No border.</p>
     <p class="hidden">A hidden border.</p>
     <p class="mix">A mixed border.</p>
-    <p style="border: 2px solid color red; border-radius: 10px;">Rounded border</p>
+    <p style="border: 2px solid red; border-radius: 10px;">Rounded border</p>
 </body>
 </html>
