@@ -1,3 +1,5 @@
 cmd창에서 폴더(워킹사이트-->test 폴더명)으로 복사
 
 C:\Workspace>git clone https://github.com/MyungKyun-Lee/Frontend-2407.git test
+
+.fnt1 { font-family: 'Noto Sans KR', sans-serif; } /* 구글에서 사용하는 글씨Font */
