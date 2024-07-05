@@ -11,9 +11,9 @@
         .fixed {position: fixed; bottom: 0; right: 0; width: 300px; border: 3px solid #73ad21;}
         .relative2 {position: relative; width: 400px; height: 200px; border: 3px solid #73AD21;}
         .absolute {position: absolute; top: 80px; right: 0; width: 200px; height: 100px; border: 3px solid #73AD21;}
-        .sticky {position: -webkit-sticky; /* Safari */
-            color: white ;
+        .sticky {position: -webkit-sticky; /* Safari */               color: white ;
                  position: sticky; top: 0; background-color: green; border: 2px solid #4CAF50;}
+        .top-left {position: absolute; top: 8px; left: 16px;}
     </style>
 </head>
 <body style="margin: 40px; height: 2000px;">
@@ -33,6 +33,10 @@
         <div class="absolute">
             This &lt;div&gt; element has position: absolute;
         </div>
+    </div>
+    <div class="relative2">
+        <img src="./img/img_5terre_wide.jpg" alt="임의의 사진" style="opacity: 0.3;" width="400" height="200">
+        <div class="top-left">Top Left</div>
     </div>
 </body>
 </html>
