@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>자기 소개</title>
+        <style>
+            .container {
+              position: relative;
+            }
+            
+            .center {
+              position: absolute;
+              top: 5%;
+              width: 100%;
+              text-align: center;
+              font-size: 18px;
+            }
+            
+            .imgs { 
+              width: 100%;
+              height: 80px;
+              opacity: 0.3;
+            }
+            div.gallery {
+                margin: 5px;
+                border: 1px solid #ccc;
+                float: left;
+                width: 180px;
+            }
+
+            div.gallery:hover {
+            border: 1px solid #777;
+            }
+
+            div.gallery img {
+            width: 100%;
+            height: auto;
+            }
+
+            div.desc {
+            padding: 15px;
+            text-align: center;
+            }
+            </style>
+    </head>
+    <body>
+        <table border="0">
+            <tr>
+                <td colspan="2" >
+                    <div class="container">
+                        <img src="./img/img_5terre_wide.jpg" alt="" class="imgs">
+                        <div class="center"><h1>자기 소개서</h2></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="5" valign="top">
+                    <ol>
+                        <li>내가 태어난곳</li>
+                        <li>내가 가봤던 곳 또는 가보고 싶은곳</li>
+                        <li>내가 좋와하는 음식</li>
+                        <li>내가 좋와하는 것(취미)</li>
+                    </ol>
+                </td>
+                <td>
+                    <article>
+                        <h2>1.내가 태어난곳</h2>
+                        <p>2023년 웹 디자인 트렌드에 대한 예측과 해석입니다. ...</p>
+                    </article>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <article>
+                        <h2>2.내가 가봤던 곳 또는 가보고 싶은곳</h2>
+                        <div class="gallery">
+                            <a target="_blank" href="./img/img_5terre.jpg">
+                                <img src="./img/img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+                            </a>
+                        <div class="desc">Add a description of the image here</div>
+                        </div>
+                        
+                        <div class="gallery">
+                            <a target="_blank" href="./img/img_forest.jpg">
+                                <img src="./img/img_forest.jpg" alt="Forest" width="600" height="400">
+                            </a>
+                        <div class="desc">Add a description of the image here</div>
+                        </div>
+                        
+                        <div class="gallery">
+                            <a target="_blank" href="./img/img_lights.jpg">
+                                <img src="./img/img_lights.jpg" alt="Northern Lights" width="600" height="400">
+                            </a>
+                        <div class="desc">Add a description of the image here</div>
+                        </div>
+                        
+                        <div class="gallery">
+                            <a target="_blank" href="./img/img_mountains.jpg">
+                                <img src="./img/img_mountains.jpg" alt="Mountains" width="600" height="400">
+                            </a>
+                        <div class="desc">Add a description of the image here</div>
+                        </div>
+                    </article>
+                </td>
+            </tr>
+            <tr>
+                <td>            
+                    <article>
+                        <h2>3.내가 좋와하는 음식</h2>
+                        <p>모바일 앱을 개발할 때 유용한 팁과 가이드라인을 제공합니다. ...</p>
+                    </article>
+                </td>
+            </tr>
+            <tr>
+                <td>             
+                    <article>
+                        <h2>4.내가 좋와하는 것(취미)</h2>
+                        <p>모바일 앱을 개발할 때 유용한 팁과 가이드라인을 제공합니다. ...</p>
+                    </article>
+                </td>
+            </tr>
+            <tr><td colspan="2" align="right"><time datetime="2024-07-05">2024년 07월 05일</time></td></tr>
+        </table>
+    </body>
+</html>
