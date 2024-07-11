@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 5 Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/88fb115cbb.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        .fnt1 { font-family: 'Noto Sans KR', sans-serif; } /* 구글에서 사용하는 글씨Font */
+        a {text-decoration: none;}
+        .container {position: relative;}
+        .center {
+              position: absolute;
+              top: 5%;
+              width: 100%;
+              text-align: center;
+              font-size: 18px;
+            }
+        .imgs { 
+              width: 100%;
+              height: 80px;
+              opacity: 0.3;
+            }
+        div.gallery {
+                margin: 5px;
+                border: 1px solid #ccc;
+                float: left;
+                width: 180px;
+            }
+        div.gallery:hover {
+            border: 1px solid #777;
+            }
+        div.gallery img {
+            width: 100%;
+            height: auto;
+            }
+        div.desc {
+            padding: 10px;
+            text-align: center;
+            }
+        /* .my_img {display: none;}
+        .my_box:hover .my_img {display: block;} */
+    </style>
+
+</head>
+<body style="height: 2000px;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/img_logo2.png" alt="Logo" style="height: 36px;">
+                </a>
+                <li class="nav-item ms-3">
+                    <a class="nav-link fnt1" href="#">
+                        <i class="fa-solid fa-house-user me-1"></i></i>Home</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link fnt1" href="#birth">
+                        <i class="fa-solid fa-cake-candles me-1"></i>내가 태어난곳</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link fnt1" href="#travel">
+                        <i class="fa-solid fa-plane-departure me-1"></i>내가 가봤던 곳</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link fnt1" href="#food">
+                        <i class="fa-solid fa-utensils me-1"></i>내가 좋와하는 음식</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link fnt1" href="#hobby">
+                        <i class="fa-solid fa-code me-1"></i>내가 좋와하는 것</a>
+                </li>
+            </ul>
+            <span class="navbar-text ms-3 justify-content-end">
+                <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket me-1"></i>Logout</a>
+            </span>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 70px;">
+        <div class="row">
+            <div class="col-3 p-2" style="background-color: bisque;">
+                <div class="card" style="width:100%">
+                    <div class="card-body">
+                      <img src="./img/img_avatar3.png" class="rounded-circle" alt="my picture" style="width:100%; height: 200px;">
+                      <h4 class="card-title">Lee Myung Kyun</h4>
+                      <p class="card-text">Groupware s/w Develop. humanoid robot Develop. Iot device s/w develop. s/w Develop PM. age 57.
+                      <a href="#"><span class="badge bg-secondary">요약</span></a></p>
+                      <br>
+                      <i class="fa-solid fa-envelope"></i> goodb@naver.com<br>
+                        <i class="fa-brands fa-github"></i>
+                        <a href="https://github.com/MyungKyun-Lee/Frontend-2407">MyungKyun-Lee</a><br>
+                        <i class="fa-solid fa-location-dot"></i> 수원시 장안구
+                        <a href="#"><span class="badge bg-secondary"><i class="fa-solid fa-cloud"></i> 날씨</span></a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9">
+                <!-- <div class="col-9" style="background-color: rgb(255, 249, 196);"> -->
+                <div class="container mt-3" id="birth">
+                    <h2 class="fnt1"><b>자기 소개서</b></h2>
+                </div>
+                <hr>
+                <div class="row mt-4 me-3">
+                    <article class="fnt1">
+                        <h4>1.내가 태어난곳</h4>
+                        <p id="travel">서울 성동구 <b>왕십리</b> 어느 동네 ... 전설에 따르면, 조선 초에 무학대사가 태조의 명을 받고, 새로운 도읍지가 될 만한 땅을 찾아 전국을 돌아다니던 중에 지금의 왕십리 일대를 지나고 있었는데, 무학대사는 이곳을 명당이라 생각하여 도읍으로 정하자고 생각하였다. 그런데 그 순간, 한 노인이 소를 끌고 지나가면서 소에게 "야, 이 무학 같이 미련한 소야!" 라고 하였다. 무학대사는 이를 듣고는 깜짝 놀라 노인에게 "혹시 도읍이 될 만한 곳을 아십니까?"라고 물었고, 노인은 "북서쪽으로 십 리를 더 가보시오. 도읍이 될 만한 터가 있을 것이오"라고 말하고는 홀연히 사라졌다고 한다</p>
+                    </article>
+                </div>
+                <div class="row mt-4 me-3">
+                    <article class="fnt1">
+                        <h4>2.내가 가봤던 곳 또는 가보고 싶은곳</h4>
+                        <div class="gallery rounded">
+                            <a target="_blank" href="#">
+                                <img src="./img/london.jfif" class="rounded" alt="런던" width="200" height="200">
+                            </a>
+                        <div class="desc fnt1">영국의 수도이자 세계 최대 도시로 손꼽히는 곳. 영국의 정치, 경제, 문화, 교통의 중심지다.</div>
+                        </div>
+                        
+                        <div class="gallery rounded">
+                            <a target="_blank" href="#">
+                                <img src="./img/chicago.jfif" class="rounded" alt="시카고" width="200" height="200">
+                            </a>
+                        <div class="desc fnt1">시카고는 미국일리노이 주 북동부에 위치한 오대호의 일부인 미시간 호수 서쪽에 붙어 있는 도시이다.</div>
+                        </div>
+                        
+                        <div class="gallery rounded">
+                            <a target="_blank" href="#">
+                                <img src="./img/Hungary.jfif" class="rounded" alt="헝거리" width="200" height="200">
+                            </a>
+                        <div class="desc fnt1">동유럽 여행 중 가장 아름다운 도시가 아니었을까 싶은 헝가리 도시들 여행하고...</div>
+                        </div>
+                        
+                        <div class="gallery rounded"  id="food">
+                            <a target="_blank" href="./img/img_mountains.jpg">
+                                <img src="./img/jeunju.jfif" class="rounded" alt="전주한옥마을" width="200" height="200">
+                            </a>
+                        <div class="desc fnt1">전주 풍남동 일대에 700여 채의 한옥이 군락을 이루고 있는  국내 최대 규모의 전통 한옥촌이며
+                            전국 유일의 도심 한옥 군입니다.</div>
+                        </div>
+                    </article>
+                </div>
+                <div class="row mt-4 me-3">
+                    <article class="fnt1">
+                        <h4>3.내가 좋와하는 음식</h4>
+                        <p>내가 제일 좋아하는 치킨 죽기전에 마지막으로 무엇을 먹을거냐 라고물으면 나는 주저없이 치킨이요 피자도 가끔은 좋은데...
+                            <br>(실제로 좋와하는 음식은 아니지만 개발하면서 많이 먹었던 음식 입니다.)
+                        </p>
+                        <ol>
+                            <li style="height: 70px;">치킨 &nbsp &nbsp <img src="./img/food1.png" class="rounded" alt="치킨" width="50" height="50"></li>
+                            <li style="height: 70px;">피자 &nbsp &nbsp <img src="./img/food2.png" class="rounded me-3" alt="피자" width="50" height="50"></li>
+                            <li style="height: 70px;" id="hobby">햄버거 <img src="./img/food3.jpg" class="rounded me-3" alt="햄버거" width="50" height="50"></li>
+                        </ol>
+                    </article>
+                </div>
+                <div class="row mt-4 me-3">
+                    <article class="fnt1">
+                        <h4>4.내가 좋와하는 것(취미)</h4>
+                        <p>프로그래머(Programmer)
+                           컴퓨터 프로그램의 논리나 알고리즘을 설계하고 프로그램을 작성하고 테스트하는 사람입니다....</p>
+                        <ul>
+                            <li>게임 프로그래머<br>
+                                <p>게임구조를 설계하고, 오류를 찾아내어 게임프로그램을 완성하는사람입니다...</p>
+                            </li>
+                            <li>응용 프로그래머<br>
+                                <p>컴퓨터 내의 응용, 연산 그리고 실행이 가능한 프로그램제작과 관리를 하는 사람입니다...</p>
+                            </li>
+                            <li>웹 프로그래머<br>
+                                <p>인터넷 상 웹페이지부터 스마트폰·어플리케이션의 프로그램을 담당합니다...</p>
+                            </li>
+                            <li>시스템 프로그래머<br>
+                                <p>응용 프로그램들을 총괄·관리하는 사람입니다. 컴퓨터 시스템이 운영체제와 같이 작동될 수 있도록 하고...</p>
+                            </li>
+                            <li>임베디드 프로그래머<br>
+                                <p>컴퓨터와 기계들의 프로그램을 담당하는 사람이자, 내장형 시스템을 연구하고 개발, 설계하는 사람입니다...</p>
+                            </li>
+                            <li>보안 프로그래머<br>
+                                <p>정보관리의 핵심기인 보안 분야의 솔루션·백신 제작을 담당하는 사람입니다...</p>
+                            </li>
+                        </ul> 
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm bg-light fixed-bottom">
+        <div class="container-fluid justify-content-center">
+            <span class="navbar-text fnt1">
+                Copyright &copy; 2021-2024 CK World Corp. All rights reserved.&nbsp;&nbsp;&nbsp;
+                [<span id="c_date"></span>]
+            </span>
+        </div>
+
+    </nav>
+    <script>
+        let now = new Date();
+        var yoil = ["(일)","(월)","(화)","(수)","(목)","(금)","(토)"];
+        var day3 = now.getDay();
+        var ctime = now.getHours();
+        var cMin = now.getMinutes();
+        var cSec = now.getSeconds();
+        const d = now.toISOString().substring(0, 10);
+        var ddmm = d.substring(0,7);
+        document.getElementById("c_date").innerHTML = d+yoil[day3]+" "+ctime+"시 "+cMin+"분 "+cSec+"초";
+    </script>
+</body>

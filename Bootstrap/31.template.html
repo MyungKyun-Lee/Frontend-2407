@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 5 Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/88fb115cbb.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        .fnt1 { font-family: 'Noto Sans KR', sans-serif; } /* 구글에서 사용하는 글씨Font */
+        a {text-decoration: none;}
+		th { text-align: center; width: 14.28%; }
+		td { height: 120px; }
+    </style>
+
+</head>
+<!-- <body style="height: 2000px;"> -->
+<body>
+    <!-- Black background with white text -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/img_logo2.png" alt="Logo" style="height: 36px;">
+                </a>
+                <li class="nav-item ms-3">
+                    <a class="nav-link " href="#">
+                        <i class="fa-solid fa-table-list"></i>게시판</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link active" href="#">
+                        <i class="fa-solid fa-calendar-days"></i>스케줄</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="#">
+                    <i class="fa-solid fa-user-group"></i>사용자</a>
+                </li>
+                <li class="nav-item dropdown me-3">
+                    <!-- <a class="nav-link" href="#"> -->
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-brain"></i>인공지능</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Link</a></li>
+                            <li><a class="dropdown-item" href="#">Another link</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">A third link</a></li>
+                        </ul>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+                </li>
+            </ul>
+            
+            <span class="navbar-text ms-3 justify-content-end">홍길동님 환영합니다</span>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 70px;">
+        <div class="row">
+            <div class="col-3 p-2" style="background-color: bisque;">
+                <div class="card" style="width:100%">
+                    <!-- <img class="card-img-top" src="../bootstrap4/img_avatar1.png" alt="Card image" style="width:100%"> -->
+                    <div class="card-body">
+                      <img src="./img/young-girl.jpeg" class="rounded-circle" alt="my picture" style="width:100%; height: 200px;">
+                      <h4 class="card-title">MyungKyun Lee</h4>
+                      <p class="card-text">Some example text some example text. John Doe is an architect and engineer
+                      <a href="#"><span class="badge bg-secondary">수정</span></a></p>
+                      <br>
+                      <i class="fa-solid fa-envelope"></i> goodb@naver.com<br>
+                        <i class="fa-brands fa-github"></i>
+                        <a href="https://github.com/MyungKyun-Lee/Frontend-2407"> github addr: Myungkyun</a><br>
+                        <i class="fa-solid fa-location-dot"></i> 수원시 팔달구
+                        <a href="#"><span class="badge bg-secondary"><i class="fa-solid fa-cloud"></i> 날씨</span></a>
+                        <br>
+                        <a href="#" class="btn btn-primary btn-sm">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main 영역: 페이지마다 이 부분만 채워줌 -->
+            <div class="col-9 text-align-center" style="background-color: rgb(255, 249, 196);">
+                <div class="justify-content-between mx-auto">
+                    <h3><strong>스케줄</strong></h3>
+                    <hr>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <!-- <div>2024-07-08(월)</div> -->
+                    <div><p id="c_date"></p></div>
+                    <div style="font-size: 1.2rem;">
+                        <a href="#"><i class="fa-solid fa-angles-left"></i></a>
+                        <a href="#"><i class="fa-solid fa-angle-left ms-2"></i></a>
+                        <!-- <span class="mx-2">2024.07</span> -->
+                        <span class="mx-2" id="c_yyyy_mm"></span>
+                        <a href="#"><i class="fa-solid fa-angles-right"></i></a>
+                        <a href="#"><i class="fa-solid fa-angle-right ms-2"></i></a>
+                    </div>
+                    <div><a href="#">기념일 추가</a></div>
+                </div>
+                <div style="height: 800px;">
+                <table class="table table-bordered">
+                    <tr class="table-secondary">
+                        <th class="text-danger">일</th>
+                        <th>월</th><th>화</th><th>수</th><th>목</th><th>금</th>
+                        <th class="text-primary">토</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-danger" style="opacity: 0.5;"><strong>30</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>1</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>2</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>3</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>4</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>5</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-primary"><strong>6</strong></div>
+                                <div>소서</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-danger"><strong>7</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>8</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>9</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>10</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td style="background-color: aquamarine;">
+                            <div class="d-flex justify-content-between">
+                                <a href="" data-bs-toggle="modal" data-bs-target="#myModal">
+                                <div><strong>11</strong></div></a>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>12</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-primary"><strong>13</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-danger"><strong>14</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>15</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>16</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>17</strong></div>
+                                <div>제헌절</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>18</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>19</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-primary"><strong>20</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-danger"><strong>21</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>22</strong></div>
+                                <div>대서</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>23</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>24</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>25</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>26</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-primary"><strong>27</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-danger"><strong>28</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>29</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>30</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div><strong>31</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div style="opacity: 0.5;"><strong>1</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div style="opacity: 0.5;"><strong>2</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-primary" style="opacity: 0.5;"><strong>3</strong></div>
+                                <div></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm bg-light fixed-bottom">
+        <div class="container-fluid justify-content-center">
+            <span class="navbar-text">
+                Copyright &copy; 2021-2024 CK World Corp. All rights reserved.
+            </span>
+        </div>
+
+    </nav>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title"><strong>일정 추가</strong></h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form action="#" class="p-1">
+                <div class="row">
+                    <div class="col"><strong>일정명</strong>
+                        <input type="checkbox" class="form-check-input ms-4" id="check1" name="option1" value="impot">
+                        <label class="form-check-label" for="check1">중요</label>
+                        <br>
+                        <input type="text" class="form-control" name="subject" id="subject" size="100%" required>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-8"><strong>시작일</strong><br>
+                        <input type="date" class="form-control" name="s_date" id="s_date">
+                    </div>
+                    <div class="col-4"><strong>시작시간</strong><br>
+                        <input type="time" class="form-control" name="s_time" id="s_time">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-8"><strong>종료일</strong><br>
+                        <input type="date" class="form-control" name="e_date" id="e_date">
+                    </div>
+                    <div class="col-4"><strong>종료시간</strong><br>
+                        <input type="time" class="form-control" name="e_time" id="e_time">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col"><strong>장소</strong><br>
+                        <input type="text" class="form-control" name="subject" id="subject" size="100%">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col"><strong>메모</strong><br>
+                        <input type="text" class="form-control" name="subject" id="subject" size="100%" placeholder="일정내용 입력하세요">
+                    </div>
+                </div>
+            </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">제출</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">종료</button>
+        </div>
+  
+      </div>
+    </div>
+    </div>
+
+    <script>
+        let now = new Date();
+        var yoil = ["(일)","(월)","(화)","(수)","(목)","(금)","(토)"];
+        var day3 = now.getDay();
+        const d = now.toISOString().substring(0, 10);
+        var ddmm = d.substring(0,7);
+        document.getElementById("c_date").innerHTML = d+yoil[day3];
+        document.getElementById("c_yyyy_mm").innerHTML = ddmm;
+    </script>
+</body>
+</html>
