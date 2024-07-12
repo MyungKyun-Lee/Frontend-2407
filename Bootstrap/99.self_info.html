@@ -20,15 +20,19 @@
               font-size: 18px;
             }
         .imgs { 
-              width: 100%;
-              height: 80px;
-              opacity: 0.3;
+              width: 180px;
+              height: 200px;
+              object-fit: cover;
+              object-position: center center;
+              /* opacity: 0.3; */
             }
         div.gallery {
                 margin: 5px;
                 border: 1px solid #ccc;
                 float: left;
                 width: 180px;
+                height: 310px;
+                text-align: left;
             }
         div.gallery:hover {
             border: 1px solid #777;
@@ -87,7 +91,7 @@
                     <div class="card-body">
                       <img src="./img/img_avatar3.png" class="rounded-circle" alt="my picture" style="width:100%; height: 200px;">
                       <h4 class="card-title">Lee Myung Kyun</h4>
-                      <p class="card-text">Groupware s/w Develop. humanoid robot Develop. Iot device s/w develop. s/w Develop PM. age 57.
+                      <p class="card-text">Groupware s/w Develop.<br>Humanoid robot Develop.<br>Iot device S/W develop.<br>S/W Develop PM.<br>age 57.
                       <a href="#"><span class="badge bg-secondary">요약</span></a></p>
                       <br>
                       <i class="fa-solid fa-envelope"></i> goodb@naver.com<br>
@@ -107,37 +111,39 @@
                 <hr>
                 <div class="row mt-4 me-3">
                     <article class="fnt1">
-                        <h4>1.내가 태어난곳</h4>
-                        <p id="travel">서울 성동구 <b>왕십리</b> 어느 동네 ... 전설에 따르면, 조선 초에 무학대사가 태조의 명을 받고, 새로운 도읍지가 될 만한 땅을 찾아 전국을 돌아다니던 중에 지금의 왕십리 일대를 지나고 있었는데, 무학대사는 이곳을 명당이라 생각하여 도읍으로 정하자고 생각하였다. 그런데 그 순간, 한 노인이 소를 끌고 지나가면서 소에게 "야, 이 무학 같이 미련한 소야!" 라고 하였다. 무학대사는 이를 듣고는 깜짝 놀라 노인에게 "혹시 도읍이 될 만한 곳을 아십니까?"라고 물었고, 노인은 "북서쪽으로 십 리를 더 가보시오. 도읍이 될 만한 터가 있을 것이오"라고 말하고는 홀연히 사라졌다고 한다</p>
+                        <h4>1. 내가 태어난 곳</h4>
+                        <p id="travel">
+                        <img src="./img/wangsibri.jfif"alt="" width="300" style="float: right; margin-left: 10px;">
+                        서울 성동구 <b>왕십리</b> 어느 동네 ... 전설에 따르면, 조선 초에 무학대사가 태조의 명을 받고, 새로운 도읍지가 될 만한 땅을 찾아 전국을 돌아다니던 중에 지금의 왕십리 일대를 지나고 있었는데, 무학대사는 이곳을 명당이라 생각하여 도읍으로 정하자고 생각하였다. 그런데 그 순간, 한 노인이 소를 끌고 지나가면서 소에게 "야, 이 무학 같이 미련한 소야!" 라고 하였다. 무학대사는 이를 듣고는 깜짝 놀라 노인에게 "혹시 도읍이 될 만한 곳을 아십니까?"라고 물었고, 노인은 "북서쪽으로 십 리를 더 가보시오. 도읍이 될 만한 터가 있을 것이오"라고 말하고는 홀연히 사라졌다고 한다</p>
                     </article>
                 </div>
                 <div class="row mt-4 me-3">
                     <article class="fnt1">
-                        <h4>2.내가 가봤던 곳 또는 가보고 싶은곳</h4>
+                        <h4>2. 내가 가봤던 곳 또는 가보고 싶은곳</h4>
                         <div class="gallery rounded">
                             <a target="_blank" href="#">
-                                <img src="./img/london.jfif" class="rounded" alt="런던" width="200" height="200">
+                                <img src="./img/london2.jpg" class="rounded" alt="런던" height="180">
                             </a>
                         <div class="desc fnt1"><b>런던</b>은 영국의 수도이자 세계 최대 도시로 손꼽히는 곳. 영국의 정치, 경제, 문화, 교통의 중심지다.</div>
                         </div>
                         
                         <div class="gallery rounded">
                             <a target="_blank" href="#">
-                                <img src="./img/chicago.jfif" class="rounded" alt="시카고" width="200" height="200">
+                                <img src="./img/chicago.jpg" class="rounded" alt="시카고" width="180" height="180">
                             </a>
                         <div class="desc fnt1"><b>시카고</b>는 미국일리노이 주 북동부에 위치한 오대호의 일부인 미시간 호수 서쪽에 붙어 있는 도시이다.</div>
                         </div>
                         
                         <div class="gallery rounded">
                             <a target="_blank" href="#">
-                                <img src="./img/Hungary.jfif" class="rounded" alt="헝거리" width="200" height="200">
+                                <img src="./img/Hungary.jfif" class="rounded" alt="헝거리" width="180" height="180">
                             </a>
                         <div class="desc fnt1">동유럽 여행 중 가장 아름다운 도시가 아니었을까 싶은 <b>헝가리</b> 도시들 여행하고...</div>
                         </div>
                         
                         <div class="gallery rounded"  id="food">
                             <a target="_blank" href="./img/img_mountains.jpg">
-                                <img src="./img/jeunju.jfif" class="rounded" alt="전주한옥마을" width="200" height="200">
+                                <img src="./img/jeunju.jfif" class="rounded" alt="전주한옥마을" width="180" height="180">
                             </a>
                         <div class="desc fnt1">전주 풍남동 일대에 700여 채의 <b>한옥</b>이 군락을 이루고 있는  국내 최대 규모의 전통 한옥촌이며
                             전국 유일의 도심 한옥 군입니다.</div>
@@ -146,7 +152,7 @@
                 </div>
                 <div class="row mt-4 me-3">
                     <article class="fnt1">
-                        <h4>3.내가 좋와하는 음식</h4>
+                        <h4>3. 내가 좋와하는 음식</h4>
                         <p>내가 제일 좋아하는 치킨 죽기전에 마지막으로 무엇을 먹을거냐 라고물으면 나는 주저없이 치킨이요 피자도 가끔은 좋은데...
                             <br>(실제로 좋와하는 음식은 아니지만 개발하면서 많이 먹었던 음식 입니다.)
                         </p>
@@ -159,7 +165,7 @@
                 </div>
                 <div class="row mt-4 me-3">
                     <article class="fnt1">
-                        <h4>4.내가 좋와하는 것(취미)</h4>
+                        <h4>4. 내가 좋와하는 것(취미)</h4>
                         <p>프로그래머(Programmer)
                            컴퓨터 프로그램의 논리나 알고리즘을 설계하고 프로그램을 작성하고 테스트하는 사람입니다....</p>
                         <ul>
