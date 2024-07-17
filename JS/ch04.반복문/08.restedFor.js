@@ -48,7 +48,7 @@ for (i=0; i<6; i++) {
 console.log(diceArryay);
 console.log('-----------');
 // 마른모 모양 * 그리기
-let N = 5;
+let N = 6;
 for (let i=0; i <= N; i++) {
     let line = '';
     for (let k = 0; k < N-i; k++) {
