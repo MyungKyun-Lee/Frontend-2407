@@ -8,7 +8,7 @@ let newPerson = {name, age, job};                   // key 이름과 변수명�
 console.log(person, newPerson);
 
 let externalForm = JSON.stringify(person);
-console.log(externalForm);
+console.log('externalForm: ' + externalForm);
 
 let internalForm = JSON.parse(externalForm);
 console.log(internalForm);
