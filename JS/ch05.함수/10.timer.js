@@ -1,7 +1,7 @@
 
 // 타이머 내장 함수
 
-setTimeout(function() {console.log('3초 경과');}, 3000);
+// setTimeout(function() {console.log('3초 경과');}, 3000);
 
 // 타임 5초후 정지
 const si = setInterval(() => {

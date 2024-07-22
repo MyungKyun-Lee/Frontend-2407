@@ -14,8 +14,8 @@
 
             let width = image.getAttribute('width');
             let height = image.height;
-            // let info = `width: ${width}, height: ${height}`;
-            let info = `width: ${width}, height: ${height}, alt: ${image.alt}`;
+            let alt = image.alt;
+            let info = `width: ${width}, height: ${height}, alt: ${alt}`;
             document.querySelector('h3').innerText = info;
         }
     </script>

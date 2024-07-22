@@ -15,15 +15,15 @@
             let header = document.querySelector('#header');
             let originalText = header.innerHTML;
             header.textContent = '<i>i 태크입니다.</i>';
-            header.innerHTML += '<i>i 태크입니다.</i>';
-            header.innerHTML += '&lt;i&gt;i 태크입니다.&lt/i&gt';
+            header.innerHTML += '<br><i>i 태크입니다.</i>';
+            header.innerHTML += '<br>&lt;i&gt;i 태크입니다.&lt/i&gt';
         }
     </script>
 </head>
 <body style="margin: 40px;">
     <h1 id="header">Header 1</h1>
     <button onclick="changeText()">문자 변경</button>
-    <button coclick="escapeText()">Escape 문자 변경</button>
+    <button onclick="escapeText()">Escape 문자 변경</button>
     
 </body>
 </html>
