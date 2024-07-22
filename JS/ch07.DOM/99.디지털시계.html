@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디지털시계</title>
+    <style>
+        h1, button {padding: 5px; margin: 5px; font-size: 2rem;}
+        img {user-select: none; width: 80px; height: 72px;}
+    </style>
+    <script>
+        // const str0 = '../img/0.svg';
+        // const str1 = '../img/1.svg';
+        // const str2 = '../img/2.svg';
+        // const str3 = '../img/3.svg';
+        // const str4 = '../img/4.svg';
+        // const str5 = '../img/5.svg';
+        // const str6 = '../img/6.svg';
+        // const str7 = '../img/7.svg';
+        // const str8 = '../img/8.svg';
+        // const str9 = '../img/9.svg';
+
+        function twoDigit(num) {
+            return num < 10 ? '0' + num : String(num);      // 4 --> '04', 15 --> '15'
+        }
+        function myClock() {
+            let date = new Date();
+            return `${twoDigit(date.getHours())}:${twoDigit(date.getMinutes())}:${twoDigit(date.getSeconds())}`;
+        }
+        window.onload = () => {
+            const display = document.getElementById('display');
+            const t1 = document.getElementById('t1');
+            const t2 = document.getElementById('t2');
+            const m1 = document.getElementById('m1');
+            const m2 = document.getElementById('m2');
+            const s1 = document.getElementById('s1');
+            const s2 = document.getElementById('s2');
+
+            let si = setInterval(() => {
+                        const timeStr = myClock();
+                        display.innerHTML = timeStr;
+                        t1.src = `../img/${timeStr[0]}.svg`;
+                        t2.src = `../img/${timeStr[1]}.svg`;
+                        m1.src = `../img/${timeStr[3]}.svg`;
+                        m2.src = `../img/${timeStr[4]}.svg`;
+                        s1.src = `../img/${timeStr[6]}.svg`;
+                        s2.src = `../img/${timeStr[7]}.svg`;
+                    }, 1000);
+            setTimeout(() => {
+                clearInterval(si);
+            }, 30000);
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1 id="display" style="font-size: 2rem;">00:00:00</h1>
+    <br>
+    <img id="t1" src="../img/0.svg"> 
+    <img id="t2" src="../img/0.svg"> 
+    <img src="../img/Colon.jpg">
+    <img id="m1" src="../img/0.svg">
+    <img id="m2" src="../img/0.svg">
+    <img src="../img/Colon.jpg">
+    <img id="s1" src="../img/0.svg">
+    <img id="s2" src="../img/0.svg">
+</body>
+</html>
