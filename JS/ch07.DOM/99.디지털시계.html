@@ -6,7 +6,8 @@
     <title>디지털시계</title>
     <style>
         h1, button {padding: 5px; margin: 5px; font-size: 2rem;}
-        img {user-select: none; width: 80px; height: 72px;}
+        img {display: block; float: left; user-select: none; width: 60px; height: 90px;}
+        /* img {user-select: none; width: 80px; height: 72px;} */
     </style>
     <script>
         // const str0 = '../img/0.svg';
@@ -39,12 +40,12 @@
             let si = setInterval(() => {
                         const timeStr = myClock();
                         display.innerHTML = timeStr;
-                        t1.src = `../img/${timeStr[0]}.svg`;
-                        t2.src = `../img/${timeStr[1]}.svg`;
-                        m1.src = `../img/${timeStr[3]}.svg`;
-                        m2.src = `../img/${timeStr[4]}.svg`;
-                        s1.src = `../img/${timeStr[6]}.svg`;
-                        s2.src = `../img/${timeStr[7]}.svg`;
+                        t1.src = `../img2/${timeStr[0]}.jpg`;
+                        t2.src = `../img2/${timeStr[1]}.jpg`;
+                        m1.src = `../img2/${timeStr[3]}.jpg`;
+                        m2.src = `../img2/${timeStr[4]}.jpg`;
+                        s1.src = `../img2/${timeStr[6]}.jpg`;
+                        s2.src = `../img2/${timeStr[7]}.jpg`;
                     }, 1000);
             setTimeout(() => {
                 clearInterval(si);
@@ -55,13 +56,13 @@
 <body style="margin: 40px;">
     <h1 id="display" style="font-size: 2rem;">00:00:00</h1>
     <br>
-    <img id="t1" src="../img/0.svg"> 
-    <img id="t2" src="../img/0.svg"> 
-    <img src="../img/Colon.jpg">
-    <img id="m1" src="../img/0.svg">
-    <img id="m2" src="../img/0.svg">
-    <img src="../img/Colon.jpg">
-    <img id="s1" src="../img/0.svg">
-    <img id="s2" src="../img/0.svg">
+    <img id="t1" src="../img2/0.jpg">
+    <img id="t2" src="../img2/0.jpg">
+    <img src="../img2/Colon.jpg">
+    <img id="m1" src="../img2/0.jpg">
+    <img id="m2" src="../img2/0.jpg">
+    <img src="../img2/Colon.jpg">
+    <img id="s1" src="../img2/0.jpg">
+    <img id="s2" src="../img2/0.jpg">
 </body>
 </html>
