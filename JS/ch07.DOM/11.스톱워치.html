@@ -6,7 +6,7 @@
     <title>StopWatch</title>
     <style>
         h1, button {padding: 5px; margin: 5px; font-size: 2rem;}
-        img {display:block; user-select: none; width: 67px; height: 108px;}
+        img {display: block; float: left; user-select: none; width: 67px; height: 108px;}
     </style>
     <script>
         function twoDigit(num) {
@@ -48,10 +48,11 @@
     <button id="reset">리셋</button>
 
     <article >
-        <img src="../img/0.jpg" width="67" height="108">
-        <img src="../img/0.jpg" width="67" height="108">
-        <img src="../img/Colon.jpg" width="67" height="108">
-        <img src="../img/0.jpg" width="67" height="108">
+        <img id="m1" src="../img/0.jpg">
+        <img id="m2" src="../img/0.jpg">
+        <img src="../img/Colon.jpg">
+        <img id="s1" src="../img/0.jpg">
+        <img id="s2" src="../img/0.jpg">
     </article>
 </body>
 </html>

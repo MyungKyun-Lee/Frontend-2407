@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별 움직이기</title>
+    <script>
+        window.onload = () => {
+            const star = document.querySelector('h1');
+            star.style.position = 'absolute';
+
+            let [x, y] = [0, 0];
+            const block = 20;
+            const print = () => {
+                star.style.left = `${x * block}px`;
+                star.style.top = `${y * block}px`;
+            }
+            print();
+
+            // 별 이동
+            const [left, up, right, down] = [37, 38, 39, 40];
+            document.body.addEventListener('keydown', (event) => {
+                switch (event.keyCode) {
+                    case 0x48 :       // 키보드 키값은 아스키 코드와 다름. A = 65 부터... H = 72
+                    case left :
+                        x--; break;
+                    case 0x4b :
+                    case up :
+                        y--; break;
+                    case 0x4c :
+                    case right :
+                        x++; break;
+                    case 0x4a :
+                    case down :
+                        y++; break;
+                }
+                print();
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>★</h1>
+</body>
+</html>
