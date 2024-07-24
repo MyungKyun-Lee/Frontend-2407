@@ -17,6 +17,13 @@
             let second = parseInt(num/10) % 60;
             return twoDigit(minute) + ':' + twoDigit(second) + '.' + num%10;
         }
+        function displayDigital(timeStr) {
+            document.getElementById('m1').src = `../img/${timeStr[0]}.jpg`;
+            document.getElementById('m2').src = `../img/${timeStr[1]}.jpg`;
+            document.getElementById('s1').src = `../img/${timeStr[3]}.jpg`;
+            document.getElementById('s2').src = `../img/${timeStr[4]}.jpg`;
+            document.getElementById('s3').src = `../img/${timeStr[6]}.jpg`;
+        }
         window.onload = () => {
             let count = 0;
             let si = null;
@@ -29,6 +36,8 @@
                 si = setInterval(() => {
                         count++;
                         display.innerHTML = displayTime(count);
+                        let timeStr = displayTime(count);
+                        displayDigital(timeStr);
                     }, 100);
             }
             stop.onclick = () => {
@@ -37,6 +46,8 @@
             reset.onclick = () => {
                 count = 0;
                 display.innerHTML = '00:00.0';
+                let timeStr = '00:00.0';
+                displayDigital(timeStr);
             }
         }
     </script>
@@ -53,6 +64,8 @@
         <img src="../img/Colon.jpg">
         <img id="s1" src="../img/0.jpg">
         <img id="s2" src="../img/0.jpg">
+        <img src="../img/Colon.jpg">
+        <img id="s3" src="../img/0.jpg">
     </article>
 </body>
 </html>

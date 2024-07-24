@@ -1,0 +1,15 @@
+<script>
+    window.onload = () => {
+        const imgs = document.querySelectorAll('img');
+
+        imgs.forEach((img) => {
+            img.addEventListener('contextmenu', e => {
+                e.preventDefault();
+            });
+        });
+    }
+</script>
+<body>
+    <img src="https://picsum.photos/200/200?q=5" alt="">
+    <img src="https://picsum.photos/200/200?q=1" alt="">
+</body>
