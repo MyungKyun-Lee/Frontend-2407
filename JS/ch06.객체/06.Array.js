@@ -12,7 +12,7 @@ console.log(newFruits);
 
 // join() - 문자열로 연결
 console.log(`내가 갖고 싶은 차는 ${cars} 입니다.`);
-console.log(`내가 갖고 싶은 차는 ${cars.join(', ')} 입니다.`);
+console.log(`내가 갖고 싶은 차는 ${cars.join(',- ')} 입니다.`);
 
 // pop()* - 맨 뒤에 있는 요소를 끄집어 내고, 파괴적 메소드
 console.log(cars.pop());

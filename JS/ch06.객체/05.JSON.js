@@ -13,6 +13,7 @@ console.log('externalForm: ' + externalForm);
 let internalForm = JSON.parse(externalForm);
 console.log(internalForm);
 
+console.log('----------- 배열추가 ---------------');
 let personArray = [person, {name: 'Maria', age: 25, job: '디자이너'}];
 console.log(JSON.stringify(personArray));
 console.log(personArray);
@@ -20,7 +21,8 @@ console.log(personArray);
 // comparator
 // (a-b) => a-b   오름차순
 // (a-b) => b-a   내림차순
-personArray.sort((a,b) => a.name - b.name);
+console.log('----------- sort ---------------');
+personArray.sort((a,b) => b.name - a.name);
 console.log(personArray);
 personArray.sort((a,b) => a.age - b.age);
 console.log(personArray);
