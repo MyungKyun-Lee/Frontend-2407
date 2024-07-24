@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>디지털 시계(그래픽버전)</title>
     <style>
-        .img1 { width: 33px; height: 54px;}
+        .img1 {display: block; float: left; width: 39px; height: 65px;}
         .img2 {display: block; float: left; user-select: none; width: 60px; height: 90px;}
     </style>
     <script>
@@ -25,7 +25,7 @@
         }
         window.onload = () => {
             let dateStr = myDate(new Date());
-            document.getElementById('date').innerHTML = dateStr;
+            // document.getElementById('date').innerHTML = dateStr;
             document.getElementById('y1').src = `./img/${dateStr[0]}.jpg`;
             document.getElementById('y2').src = `./img/${dateStr[1]}.jpg`;
             document.getElementById('y3').src = `./img/${dateStr[2]}.jpg`;
@@ -50,7 +50,7 @@
 </head>
 <body style="margin: 40px;">
     <h1 id="date"></h1>
-    <div>
+    <p>
         <img id="y1"     src="./img/0.jpg" class="img1">
         <img id="y2"     src="./img/0.jpg" class="img1">
         <img id="y3"     src="./img/0.jpg" class="img1">
@@ -61,10 +61,10 @@
         <img id="minus2" src="./img/minus.jpg" class="img1">
         <img id="d1"     src="./img/0.jpg" class="img1">
         <img id="d2"     src="./img/0.jpg" class="img1">
-        <h1 id="week"></h1>
-    </div>
+        <span id="week" style="font-size: 2.8rem;font-weight: bold;"></span>
+    </p>
     <hr><br>
-    <div>
+    <p>
         <img id="h1" src="./img2/0.jpg"     class="img2">
         <img id="h2" src="./img2/0.jpg"     class="img2">
         <img         src="./img2/Colon.jpg" class="img2">
@@ -73,6 +73,6 @@
         <img         src="./img2/Colon.jpg" class="img2">
         <img id="s1" src="./img2/0.jpg"     class="img2">
         <img id="s2" src="./img2/0.jpg"     class="img2">
-    </div>
+    </p>
 </body>
 </html>

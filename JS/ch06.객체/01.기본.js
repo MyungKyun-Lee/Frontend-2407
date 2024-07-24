@@ -10,7 +10,7 @@ let personObject = { name:'James', age: 27, gender: '남자', job: '프로그래
 // 2. 객체 본연의 의미 - 속성(attribute)과 메소드(method) 사물을 묘사
 const pet = {
     name: '구름',
-    eat: function(food='뼈다귀') {
+    eat: function(food = '뼈다귀') {
         console.log(`${food} 을/를 먹습니다.`);
     }
 }
