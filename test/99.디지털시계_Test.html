@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디지털 시계(그래픽버전)</title>
+    <style>
+        .img1 { width: 33px; height: 54px;}
+        .img2 {display: block; float: left; user-select: none; width: 60px; height: 90px;}
+    </style>
+    <script>
+        function twoDigit(num) {
+            return num < 10 ? '0' + num : String(num);
+        }
+        function myDate(now) {
+            var week = '일,월,화,수,목,금,토'.split(',');
+            return `${now.getFullYear()}-${twoDigit(now.getMonth() + 1)}-${twoDigit(now.getDate())}(${week[now.getDay()]})`;
+        }
+        function myweek(now) {
+            var week = '일,월,화,수,목,금,토'.split(',');
+            return `(${week[now.getDay()]})`;
+        }
+        function myTime(now) {
+            return `${twoDigit(now.getHours())}:${twoDigit(now.getMinutes())}:${twoDigit(now.getSeconds())}`;
+        }
+        window.onload = () => {
+            let dateStr = myDate(new Date());
+            document.getElementById('date').innerHTML = dateStr;
+            document.getElementById('y1').src = `./img/${dateStr[0]}.jpg`;
+            document.getElementById('y2').src = `./img/${dateStr[1]}.jpg`;
+            document.getElementById('y3').src = `./img/${dateStr[2]}.jpg`;
+            document.getElementById('y4').src = `./img/${dateStr[3]}.jpg`;
+            document.getElementById('mm1').src = `./img/${dateStr[5]}.jpg`;
+            document.getElementById('mm2').src = `./img/${dateStr[6]}.jpg`;
+            document.getElementById('d1').src = `./img/${dateStr[8]}.jpg`;
+            document.getElementById('d2').src = `./img/${dateStr[9]}.jpg`;
+            document.getElementById('week').innerHTML = myweek(new Date());
+
+            setInterval(() => {
+                let timeStr = myTime(new Date());
+                document.getElementById('h1').src = `./img2/${timeStr[0]}.jpg`;
+                document.getElementById('h2').src = `./img2/${timeStr[1]}.jpg`;
+                document.getElementById('m1').src = `./img2/${timeStr[3]}.jpg`;
+                document.getElementById('m2').src = `./img2/${timeStr[4]}.jpg`;
+                document.getElementById('s1').src = `./img2/${timeStr[6]}.jpg`;
+                document.getElementById('s2').src = `./img2/${timeStr[7]}.jpg`;
+            },1000);
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1 id="date"></h1>
+    <div>
+        <img id="y1"     src="./img/0.jpg" class="img1">
+        <img id="y2"     src="./img/0.jpg" class="img1">
+        <img id="y3"     src="./img/0.jpg" class="img1">
+        <img id="y4"     src="./img/0.jpg" class="img1">
+        <img id="minus1" src="./img/minus.jpg" class="img1">
+        <img id="mm1"    src="./img/0.jpg" class="img1">
+        <img id="mm2"    src="./img/0.jpg" class="img1">
+        <img id="minus2" src="./img/minus.jpg" class="img1">
+        <img id="d1"     src="./img/0.jpg" class="img1">
+        <img id="d2"     src="./img/0.jpg" class="img1">
+        <h1 id="week"></h1>
+    </div>
+    <hr><br>
+    <div>
+        <img id="h1" src="./img2/0.jpg"     class="img2">
+        <img id="h2" src="./img2/0.jpg"     class="img2">
+        <img         src="./img2/Colon.jpg" class="img2">
+        <img id="m1" src="./img2/0.jpg"     class="img2">
+        <img id="m2" src="./img2/0.jpg"     class="img2">
+        <img         src="./img2/Colon.jpg" class="img2">
+        <img id="s1" src="./img2/0.jpg"     class="img2">
+        <img id="s2" src="./img2/0.jpg"     class="img2">
+    </div>
+</body>
+</html>
