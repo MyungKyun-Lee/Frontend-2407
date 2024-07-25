@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 간접 생성</title>
+    <style>
+        h1 {background-color:antiquewhite ;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(() => {
+            $('body').on('click', 'h1', function() {
+                $('<h1></h1>')
+                    .text($(this).text())
+                    .appendTo('body');
+            });
+        });
+    </script>
+</head>
+<body style="margin: 40px;"></body>
+    <h1>첫번째 줄에서만 헤더가 생성</h1>
+</body>
+</html>
