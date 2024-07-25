@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보여주기/감추기</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(() => {
+            $('#hide').click(() => {
+                $('#div1').hide();
+            });
+            $('#show').click(() => {
+                $('div').show();
+                $('#img1').show();
+            });
+            $('#img1').click(function() {
+                $(this).hide();
+            })
+            // $('#div2').click(function() {
+            //     $('#img1').show();
+            // })
+        });
+    </script>
+</head>
+<body style="margin: 40px;">
+    <p>버튼을 누르면 이벤트를 처리합니다.</p>
+    <div id="div1">
+        <img src="https://picsum.photos/320/160?q=1" alt="랜덤 이미지" style="border-radius: 3%;"><br><br>
+    </div>
+    <button id="hide">블록 감추기</button>
+    <button id="show">블록 보여주기</button>
+    <br><br>
+    <div id="div2" style="width: 320px; height: 160px; background-color: antiquewhite;">
+        <img id="img1" src="https://picsum.photos/320/160?q=5" alt="랜덤 이미지" style="border-radius: 3%;">
+    </div>
+    <p>위 이미지 영역을 클릭하세요</p>
+</body>
+</html>

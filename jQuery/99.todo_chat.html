@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo 할 일 목록</title>
+    <style>
+        input, button, div {padding: 5px;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(() => {
+            const input = $('#todo');
+            const addButton = $('#add-button');
+            const todoList = $('#todo-list');
+            let keyCount = 0;
+
+            const addTodo = () => {
+                const todoText = input.val().trim();
+                if (todoText === '') {
+                    alert('올바르게 할 일을 입력하세요.');
+                    return;
+                }
+                const key = keyCount++;
+
+                // Create new todo item
+                const item = $('<div></div>').attr('data-key', key);
+                const checkbox = $('<input type="checkbox">');
+                const text = $('<span></span>').text(todoText);
+                const button = $('<button>제거하기</button>');
+
+                // Append elements to item
+                item.append(checkbox, text, button);
+
+                // Append item to todoList
+                todoList.append(item);
+
+                // Checkbox change event
+                checkbox.on('change', function() {
+                    item.css('text-decoration', this.checked ? 'line-through' : '');
+                });
+
+                // Button click event
+                button.on('click', () => {
+                    item.remove();
+                });
+
+                // Clear input field
+                input.val('');
+            };
+
+            // Event listeners
+            addButton.on('click', addTodo);
+            input.on('keyup', (e) => {
+                if (e.code === 'Enter') {
+                    addTodo();
+                }
+            });
+        });
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1>할 일 목록</h1>
+    <input id="todo" type="text">
+    <button id="add-button">추가하기</button>
+    <div id="todo-list"></div>
+</body>
+</html>

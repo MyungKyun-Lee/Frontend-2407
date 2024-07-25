@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디지털 시계</title>
+    <style>
+        img {display: block; float: left; user-select: none; width: 60px; height: 90px;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        var ids = ['h1','h2','m1','m2','s1','s2'];
+        function twoDigit(num) {
+            return num < 10 ? '0' + num : String(num);      // 4 --> '04', 15 --> '15'
+        }
+        function myDate(now) {
+            var week = '일,월,화,수,목,금,토'.split(',');
+            return `${now.getFullYear()}-${twoDigit(now.getMonth() + 1)}-${twoDigit(now.getDate())}(${week[now.getDay()]})`;
+        }
+        function myTime(now) {
+            return `${twoDigit(now.getHours())}:${twoDigit(now.getMinutes())}:${twoDigit(now.getSeconds())}`;
+        }
+        $(document).ready(() => {
+            setInterval(() => {
+                let nowDateTime = new Date();
+                let dateStr = myDate(nowDateTime);
+                $('#date').text(dateStr);
+
+                let timeStr = myTime(nowDateTime).replaceAll(':','');
+                // $('#time').text(timeStr);
+                // let timeStr = myTime(nowDateTime).replace(':','').replace(':','');
+                for(let i=0; i < timeStr.length; i++) {
+                    $(`#${ids[i]}`).attr({src: `../JS/img2/${timeStr[i]}.jpg`})
+                }
+            }, 1000);
+        });
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1 id="date"></h1>
+    <hr>
+    <h1 id="time"></h1>
+    <img id="h1" src="../JS/img2/0.jpg">
+    <img id="h2" src="../JS/img2/0.jpg">
+    <img         src="../JS/img2/Colon.jpg">
+    <img id="m1" src="../JS/img2/0.jpg">
+    <img id="m2" src="../JS/img2/0.jpg">
+    <img         src="../JS/img2/Colon.jpg">
+    <img id="s1" src="../JS/img2/0.jpg">
+    <img id="s2" src="../JS/img2/0.jpg">
+</body>
+</html>

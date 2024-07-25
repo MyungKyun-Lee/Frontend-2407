@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <style>
+        h1, button {padding: 5px; margin: 5px; font-size: 2rem;}
+        img {display: block; float: left; user-select: none; width: 67px; height: 108px;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        function twoDigit(num) {
+            return num < 10 ? '0' + num : String(num);      // 4 --> '04', 15 --> '15'
+        }
+        function displayTime(num) {
+            let minute = parseInt(num/600);
+            let second = parseInt(num/10) % 60;
+            return twoDigit(minute) + ':' + twoDigit(second) + '.' + num%10;
+        }
+        function displayDigital(timeStr) {
+            $('#m1').attr({src: `../JS/img2/${timeStr[0]}.jpg`});
+            $('#m2').attr({src: `../JS/img2/${timeStr[1]}.jpg`});
+            $('#s1').attr({src: `../JS/img2/${timeStr[3]}.jpg`});
+            $('#s2').attr({src: `../JS/img2/${timeStr[4]}.jpg`});
+            $('#s3').attr({src: `../JS/img2/${timeStr[6]}.jpg`});
+        }
+        $(document).ready(() => {
+            let count = 0;
+            let si = null;
+            $('#start').click(() => {
+                si = setInterval(() => {
+                    count++;
+                    $('#display').text(displayTime(count));
+                    let timeStr = displayTime(count);
+                    displayDigital(timeStr);
+                }, 100);
+            });
+            $('#stop').click(() => {
+                clearInterval(si);
+            });
+            $('#reset').click(() => {
+                count = 0;
+                $('#display').text('00:00.0');
+                let timeStr = '00:00.0';
+                displayDigital(timeStr);
+            });
+        })
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1 id="display" style="font-size: 4rem;">00:00.0</h1>
+    <button id="start">시작</button>
+    <button id="stop" >정지</button>
+    <button id="reset">리셋</button>
+
+    <p>
+        <img id="m1" src="../JS/img2/0.jpg">
+        <img id="m2" src="../JS/img2/0.jpg">
+        <img src="../JS/img2/Colon.jpg">
+        <img id="s1" src="../JS/img2/0.jpg">
+        <img id="s2" src="../JS/img2/0.jpg">
+        <img src="../JS/img2/Colon.jpg">
+        <img id="s3" src="../JS/img2/0.jpg">
+    </p>
+</body>
+</html>
