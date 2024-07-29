@@ -12,8 +12,10 @@
             let params2 = `keyword=${encodeURIComponent('수원시청')}`;         // 한글은 반듯시 인코딩해주어야 함
             let params3 = `confmKey=${roadAddrKey}&resultType=json`;
             let loadUrl = `${loadBaseUrl}?${params1}&${params2}&${params3}`;
+
             let kakaoBaseUrl = 'https://dapi.kakao.com/v2/local/search/address.json';
             let header = { Authorization: `KakaoAK ${kakaoRestkey}` };
+            let lonlon = 0;
 
             fetch(loadUrl)
                 .then(response => response.json())
@@ -35,24 +37,6 @@
                             console.log(error);
                         })
                 });
-            
-            // document.getElementById('place').innerHTML=loadAddr;
-
-            // let b_url = 'https://dapi.kakao.com/v2/local/search/address.json';
-            // let addr = loadAddr;
-            // let c_url = `${b_url}?query=${encodeURIComponent(addr)}`;
-
-            // // 헤더: Authorization: KakaoAK ${REST_API_KEY}
-            // let header = { Authorization: `KakaoAK ${kakaoRestkey}` };
-
-            // fetch(c_url, { headers: header })
-            //     .then(response => response.json())
-            //     .then(result => {
-            //         console.log(result);
-            //     })
-            //     .catch(error => {
-            //         console.log(error);
-            //     })
         }
 
     </script>
@@ -66,6 +50,5 @@
         <li>위도: <span id="lat"></span></li>
         <li>경도: <span id="lon"></span></li>
     </ul>
-    
 </body>
 </html>
