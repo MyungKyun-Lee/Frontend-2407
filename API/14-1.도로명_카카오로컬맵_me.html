@@ -3,20 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>도로명주소 + 카카오로컬 API + 지도</title>
+    <title>임의장소 지도에 표시하기</title>
+    <style>
+        input, button, div {padding: 5px;margin: 5px;}
+    </style>
     <script src="./key.js"></script>
     <script>
+        window.onload = () => {
+        }
 
-        function serch_adders () {
+        function handleMap() {
+            const input = document.querySelector('#serchPlace');
+            const addButton = document.getElementById('add-button');
+            let place = input.value.trim();
+            if (place === '') {
+                    alert('장소를 입력해주세요.'); return;
+                }
+
             const kakaoScript = document.createElement('script');
             kakaoScript.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJskey}&autoload=false`;
             kakaoScript.onload = () => {
                 kakao.maps.load();
             };
             document.head.appendChild(kakaoScript);
-            
-            let place = '경기도청';
-            document.getElementById('serch_place').innerHTML = `${place}`;
+
+            document.getElementById('place').innerHTML = `${place}`;
             let loadBaseUrl = 'https://business.juso.go.kr/addrlink/addrLinkApi.do';
             let params1 = 'currentPage=1&countPerPage=5';
             let params2 = `keyword=${encodeURIComponent(place)}`;         // 한글은 반듯시 인코딩해주어야 함
@@ -30,7 +41,7 @@
                 .then(response => response.json())
                 .then(result => {
                     let loadAddr = result.results.juso[0].roadAddr;
-                    document.getElementById('place').innerHTML=loadAddr;
+                    document.getElementById('roadAddr').innerHTML=loadAddr;
                     
                     let kakaoUrl = `${kakaoBaseUrl}?query=${loadAddr}`;
                     fetch(kakaoUrl, { headers: header })
@@ -47,8 +58,8 @@
                             console.log(error);
                         })
                 });
-        };
 
+        }
         function drowMap(place, lat, lon) {
             let container = document.getElementById('map');
             let position  = new kakao.maps.LatLng(lat, lon); 
@@ -76,17 +87,17 @@
                 infowindow.close();
             });
         }
-        window.onload = () => {
-            serch_adders();
-        }
+
     </script>
 </head>
 <body style="margin: 40px;">
-    <h1>도로명주소 API + 카카오로컬 API + 지도</h1>
+    <h1>임의장소 지도에 표시하기</h1>
     <hr>
-    <h3><span id="serch_place"></span></h3>
+    <input onchange="handleMap()" type="text" id="serchPlace" placeholder="임의의 장소를 입력하세요.">
+    <button onclick="handleMap()" id="add-button">지도 그리기</button>
+    <h3><span id="place"></span></h3>
     <ul>
-        <li>도로명주소: <span id="place"></span></li>
+        <li>도로명주소: <span id="roadAddr"></span></li>
         <li>위도: <span id="lat"></span></li>
         <li>경도: <span id="lon"></span></li>
     </ul>
