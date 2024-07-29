@@ -10,6 +10,17 @@
     <script src="./key.js"></script>
     <script>
         window.onload = () => {
+            const input = document.querySelector('#serchPlace');
+            const addButton = document.getElementById('add-button');
+            let place = input.value.trim();
+            if (place === '') {
+                    alert('장소를 입력해주세요.'); return;
+                }
+            input.addEventListener('keyup', e => {
+                if (e.keyCode === 13) {         // 'Enter' = 13
+                    alert('장소를 입력해주세요.'); return;
+                }
+            });
         }
 
         function handleMap() {

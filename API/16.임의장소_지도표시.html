@@ -9,8 +9,15 @@
     </style>
     <script src="./key.js"></script>
     <script>
-        window.onload = () => {
-        }
+        const kakaoScript = document.createElement('script');
+        kakaoScript.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJskey}&autoload=false`;
+        kakaoScript.onload = () => {
+            kakao.maps.load();
+        };
+        
+        document.head.appendChild(kakaoScript);
+        // window.onload = () => {
+        // }
 
         function handleMap() {
             const input = document.querySelector('#serchPlace');
@@ -20,12 +27,6 @@
                     alert('장소를 입력해주세요.'); return;
                 }
 
-            const kakaoScript = document.createElement('script');
-            kakaoScript.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJskey}&autoload=false`;
-            kakaoScript.onload = () => {
-                kakao.maps.load();
-            };
-            document.head.appendChild(kakaoScript);
 
             document.getElementById('place').innerHTML = `${place}`;
             let loadBaseUrl = 'https://business.juso.go.kr/addrlink/addrLinkApi.do';
