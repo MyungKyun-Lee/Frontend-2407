@@ -41,6 +41,7 @@
             fetch(loadUrl)
                 .then(response => response.json())
                 .then(result => {
+                    if(!result.results.juso[0]) {alert('잘못 입력하셨습니다.');return;}  // 생성된 배열이 없으면 return;
                     let loadAddr = result.results.juso[0].roadAddr;
                     document.getElementById('roadAddr').innerHTML=loadAddr;
                     
