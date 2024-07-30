@@ -25,7 +25,7 @@
             let place = input.value.trim();
             if (place === '') {
                     alert('장소를 입력해주세요.'); return;
-                }
+            }
 
 
             document.getElementById('place').innerHTML = `${place}`;
@@ -41,7 +41,7 @@
             fetch(loadUrl)
                 .then(response => response.json())
                 .then(result => {
-                    if(!result.results.juso[0]) {alert('잘못 입력하셨습니다.');return;}  // 생성된 배열이 없으면 return;
+                    if(!result.results.juso[0]) {alert('잘못 입력하셨습니다.');return;}  // Error 처리 -생성된 배열이 없으면 return;
                     let loadAddr = result.results.juso[0].roadAddr;
                     document.getElementById('roadAddr').innerHTML=loadAddr;
                     

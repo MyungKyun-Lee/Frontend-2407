@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>도로명주소 + 카카오로컬 API + 지도</title>
-    <script src="key.js"></script>
+    <script src="./key.js"></script>
     <script>
         window.onload = () => {
             const place = '경기도청';
@@ -16,7 +16,7 @@
             const roadUrl = `${roadBaseUrl}?${params1}&${params2}&${params3}`;
 
             const kakaoScript = document.createElement('script');
-            kakaoScript.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJsKey}&autoload=false`;
+            kakaoScript.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJskey}&autoload=false`;
             kakaoScript.onload = () => {
                 kakao.maps.load(() => {
                     fetch(roadUrl)
@@ -27,7 +27,7 @@
                             document.getElementById('place').innerHTML = roadAddr;
                         
                             let kakaoUrl = `${kakaoBaseUrl}?query=${encodeURIComponent(roadAddr)}`;
-                            let header = { Authorization: `KakaoAK ${kakaoRestKey}` };   
+                            let header = { Authorization: `KakaoAK ${kakaoRestKey}` };
                             fetch(kakaoUrl, { headers: header })
                                 .then(response => response.json())
                                 .then(result => {
