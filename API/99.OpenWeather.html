@@ -24,6 +24,11 @@
             document.head.appendChild(kakaoScript);
         }
 
+        function openWeather(lat, lon) {
+            let loadUrl = 'api.openweathermap.org/data/2.5/weather?lat=35.315&lon=128.999&appid={API KEY}';
+            //결과값 {"coord":{"lon":128.999,"lat":35.315},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":286.17,"feels_like":283.66,"temp_min":281.25,"temp_max":286.17,"pressure":1012,"humidity":5},"visibility":10000,"wind":{"speed":7.2,"deg":300},"clouds":{"all":0},"dt":1646470271,"sys":{"type":1,"id":8086,"country":"KR","sunrise":1646430561,"sunset":1646472132},"timezone":32400,"id":1832828,"name":"Yangsan","cod":200}
+        }
+
         async function getCoord(place) {
             try {
                 let loadBaseUrl = 'https://business.juso.go.kr/addrlink/addrLinkApi.do';

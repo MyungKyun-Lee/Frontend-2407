@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap 5 Template</title>
+    <title>self infomation</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,6 +22,7 @@
         .img2 {display: block; float: left; user-select: none; width: 20px; height: 30px;}
     </style>
     <script src="./key.js"></script>
+    <script src="apilib.js"></script>
     <script>
         function twoDigit(num) {
             return num < 10 ? '0' + num : String(num);
@@ -39,7 +40,7 @@
             kakaoScript.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJskey}&autoload=false`;
             kakaoScript.onload = () => {
                 kakao.maps.load(async() => {
-                    const {place, roadAddr, lat, lon} = await getCoord('조원구청');
+                    const {place, roadAddr, lat, lon} = await getCoord('팔달구 중부대로 104');
                     drowMap('map1',place, lat, lon);
                 });
                 kakao.maps.load(async() => {
@@ -100,33 +101,6 @@
             },1000);
         }
 
-        async function getCoord(place) {
-            try {
-                let loadBaseUrl = 'https://business.juso.go.kr/addrlink/addrLinkApi.do';
-                let kakaoBaseUrl = 'https://dapi.kakao.com/v2/local/search/address.json';
-                let params1 = 'currentPage=1&countPerPage=5';
-                let params2 = `keyword=${encodeURIComponent(place)}`;         // 한글은 반듯시 인코딩해주어야 함
-                let params3 = `confmKey=${roadAddrKey}&resultType=json`;
-                let roadUrl = `${loadBaseUrl}?${params1}&${params2}&${params3}`;
-                
-                let response = await fetch(roadUrl);
-                let result = await response.json();
-                let roadAddr = result.results.juso[0].roadAddr;
-
-                let kakaoUrl = `${kakaoBaseUrl}?query=${encodeURIComponent(roadAddr)}`;
-                let header = { Authorization: `KakaoAK ${kakaoRestkey}` };
-                response = await fetch(kakaoUrl, { headers: header });
-                result = await response.json();
-                let lat = parseFloat(result.documents[0].y);
-                let lon = parseFloat(result.documents[0].x);
-                return {place, roadAddr, lat, lon};
-            }
-            catch(error) {
-                console.log(error);
-                return {place, roadAddr:null, lat:null, lon:null};
-            }
-        }
-
         function drowMap(mapn, place, lat, lon) {
             let container = document.getElementById(`${mapn}`);
             let stext = `${place}`;
@@ -154,6 +128,17 @@
             kakao.maps.event.addListener(marker,'mouseout', () => {
                 infowindow.close();
             });
+        }
+        async function handleWeather() {
+            const place = document.getElementById('place').value;
+            if (place) {
+			const {lat, lon} = await getCoord(place);
+			const {desc, iconUrl, temp} = await getWeather(lat, lon);
+			const html = `<img src="${iconUrl}" height="50"> <strong>${desc}</strong>, 온도: ${temp}&#8451`;
+			document.getElementById('weather').innerHTML = html;
+            drowMap('map1',place, lat, lon);
+            }
+            else return false;
         }
     </script>
 </head>
@@ -186,7 +171,7 @@
                 </li>
             </ul>
             <span class="navbar-text ms-3 justify-content-end">
-                <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket me-1"></i>Logout</a>
+                <a class="nav-link" href="javascript:alert('종료 하시겠습니까?');"><i class="fa-solid fa-right-from-bracket me-1"></i>Logout</a>
             </span>
         </div>
     </nav>
@@ -204,9 +189,11 @@
                       <i class="fa-solid fa-envelope"></i> goodb@naver.com<br>
                         <i class="fa-brands fa-github"></i>
                         <a href="https://github.com/MyungKyun-Lee/Frontend-2407">MyungKyun-Lee</a><br>
-                        <i class="fa-solid fa-location-dot"></i> 수원시 장안구
-                        <a href="#"><span class="badge bg-secondary"><i class="fa-solid fa-cloud"></i> 날씨</span></a>
-                        <br>
+                        <i class="fa-solid fa-location-dot"></i> <input type="text" id="place" size=13 style="border: 2px;" onchange="handleWeather()" placeholder="팔달구 중부대로 104">
+                        <button onclick="handleWeather()" style="border: none; background-color: white;"><span class="badge bg-secondary"><i class="fa-solid fa-cloud"></i> 날씨</span></button>
+                        <!-- <a href="handleWeather()"><span class="badge bg-secondary"><i class="fa-solid fa-cloud"></i> 날씨</span></a> -->
+                        <div id="weather" style="vertical-align: center;"></div>
+                        <!-- <br> -->
                         <div id="map1" style="width:100%; height:150px; float:right; margin-left:10px; margin-bottom: 15px;" class="mt-2"></div>
                         <br>
                         <p style="margin-left: 20px;">
