@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>오늘의 메뉴</h1>
+    <input type="button" value="버튼1" class="btnc">
+    <input type="button" value="버튼2" class="btnc">
+    <input type="text" class="prt">
+</body>
+</html>
+<script>
+    var allBtnc = document.getElementsByClassName('btnc');
+    allBtnc[0].addEventListener('click',()=>{bt1()})
+    allBtnc[1].addEventListener('click',()=>{bt2()})
+
+    function bt1() {
+        var b = document.getElementsByTagName('h1');
+        b[0].innerText = 'Today is good!!';
+    }
+    function bt2() {
+        var a = document.getElementsByClassName('prt');
+        a[0].value = "Today is good!!!";
+    }
+</script>

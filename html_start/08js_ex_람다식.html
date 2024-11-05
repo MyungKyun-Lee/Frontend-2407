@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX</title>
+</head>
+<style>
+    section {
+        display: inline-block;
+        /* float: left; */
+        width: 50%;
+        height: 300px;
+        background-color: gray;
+        padding-top: 0px;
+        padding-left: 0px;
+        box-sizing: border-box;
+    }
+</style>
+<body>
+    <div style="display: inline;">
+        <section>
+            <h1 id="h1">계산기</h1>
+            <input type="text" id="ctext" size="8">
+            <div>
+                <input type="button" value="1" class="c">
+                <input type="button" value="2" class="c">
+                <input type="button" value="3" class="c"></div>
+            <div>
+                <input type="button" value="4" class="c">
+                <input type="button" value="5" class="c">
+                <input type="button" value="6" class="c"></div>
+            <div>
+                <input type="button" value="7" class="c">
+                <input type="button" value="8" class="c">
+                <input type="button" value="9" class="c"></div>
+            <div>
+                <input type="button" value="+" class="c">
+                <input type="button" value="-" class="c">
+                <input type="button" value="*" class="c"></div>
+                <div style="width: 80px; text-align: center;">
+                    <input type="button" value="=" id="cal" style="width: 40px;" onclick="cal_text()">
+                    <input type="button" value="cls" id="cls" onclick="cls()">
+                </div>
+        </section>
+        
+        <section>
+            <h1>로그인</h1>
+            <div>아이디 <input type="text" id="id" size="8"></div>
+            <div>패스워드 <input type="text" id="pw" size="8"></div>
+            <div style="width: 80px; text-align: center;">
+                <input type="button" value="체크" id="check" onclick="check_length()"></div>
+        </section>
+    </div>
+</body>
+</html>
+<script>
+    var allBtn = document.getElementsByClassName("c")
+    for(let i=0; i<allBtn.length; i++) {
+        let key_i = allBtn[i].value;
+        allBtn[i].addEventListener('click', ()=>{key_in(key_i)})
+    }
+
+    function key_in(str) {
+        var in_text = document.getElementById('ctext');
+        // var key_i = document.getElementById(str);
+        in_text.value += str;
+    }
+    function cal_text() {
+        var in_text = document.getElementById('ctext');
+        var cal_txt = document.getElementById('h1');
+        var cal = eval(in_text.value);
+        cal_txt.innerText = cal;
+    }
+    function cls() {
+        var in_text = document.getElementById('ctext');
+        var cal_txt = document.getElementById('h1');
+        cal_txt.innerText = '계산기';
+        in_text.value = '';
+    }
+    function check_length() {
+        var chk_id = document.getElementById('id');
+        var chk_pw = document.getElementById('pw');
+
+        if (chk_id.value.length < 8) {
+            alert("사용자 ID가 8자이상 입니다!");
+            chk_id.focus();
+        } else if (chk_pw.value.length < 4) {
+            alert("패스워드는 4자이상 입니다!");
+            chk_pw.focus();
+        } else {
+            alert('입력된 정보를 전송 합니다.');
+        }
+    }
+</script>

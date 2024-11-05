@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단어검색</title>
+</head>
+<style>
+    #abcd {
+        width : 600px;
+    }
+    .swordspan{
+        background-color:aqua;
+    }
+
+</style>
+<script>
+    function sfun(){
+        var w = document.getElementById("abc").innerHTML;  // 본문을 저장할 변수 선언
+        var sw = document.getElementById("sword").value;   // 검색어를 저장할 변수 선언
+        var sw_len = sw.length;
+        var txt_len = w.length;
+        var cnt_total=0;
+        var tttt = "<font class='swordspan'> </font>"
+
+        var indx = 0;
+        for (let i=0; i < w.length; i++) {
+            let cnt = w.indexOf(sw,i);
+            if (cnt > 0) {
+                // alert(w.substring(indx,cnt));
+                cnt_total++;
+                i +=cnt+32;
+            }
+        }
+        
+        // fword2 = nre RegExp(sw, 'g');
+        w = w.replace(new RegExp(sw, 'g'),"<Mark>"+sw+"</Mark>");
+        document.getElementById("abc").innerHTML = w;
+        // alert(cnt_total)
+        alert("총문장="+txt_len+" 찾은수="+cnt_total);
+    }
+</script>
+<body>
+    <div id="abcd">
+        <span id="abc">
+            주말 이틀 연속 코로나19 하루 신규 확진자가 10만명대를 
+            기록하는 등 유행 규모가 감소세를 이어갔다. 
+            정부가 방역·의료체계의 일상회복을 
+            목표로 한 ‘포스트 오미크론 대응체계’를 준비하는 가운데 
+            11일부터는 보건소 선별진료소와 임시선별진료소에서 코로나19 신속항원검사가 중단된다.
+        </span>
+        <br>
+        <span>
+            찾을 문자열 <input type="text" id="sword"> 
+            <input type="button" onclick="sfun()" value="검색">
+        </span>
+    </div>
+</body>
+</html>
+
+<!-- 
+과제1 : 검색어가 모두 몇개인지 카운팅하시오
+과제2 : 검색어는 배경을 노락색으로 색칠하세요.
+-->
+<!--
+/*
+//정규식
+//formal language 은 특정한 법칙 들로 구성된 문자열 들의 집합 을 의미한다.
+// Javascript 는 XRegExp 
+// 정규식 리터럴로 정규식 생성 ->  var reg = /test/;
+// RegExp(pattern, flags?)
+
+pattern 에는 정규표현식 문자열 이나 다른 RegExp 객체를 받을 수 있다.
+flags 에는 g i m s y u 문자를 받을 수 있다.
+
+1. g: 문자열 전체를 확인한다.
+2. i: 문자열 에서 대소문자를 구분하지 않는다.
+3. m: 문자열 에서 `^` , `$` 에서 개행문자를 허용한다.
+4. s: 문자열 에서 `.` 에서 개행문자를 허용한다.
+5. y: lastIndex 부터 일치하는 문자열을 반환한다.
+6. u: Unicode 코드 포인트의 시퀀스로 처리한다.
+
+*/
+-->

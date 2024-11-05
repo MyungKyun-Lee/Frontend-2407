@@ -10,35 +10,69 @@
 </head>
 <style>
     body {
-        width: 1024px;
-        height: 80px;
+        width: 1256px;
+        height: 1020px;
+        border: 0px solid;
+        margin: 0px;
+        background-color: aqua;
     }
-    #header {
-        background-color:gray;
-        width: 1024px;
-        /* height: 80px; */
+    header {
+        /* display: inline-block; */
+        width: 100%;
+        height: 45px;
+        background-color: blueviolet;
+        /* float: left; */
+        /* padding-left: 20px; */
     }
-    .section {
-        /* width: 400px;
-        height: 150px; */
+    header div {
+        margin-left: 0px;
+        /* display: inline-block; */
+    }
+    nav {
+        /* display: inline-block; */
+        width: 100%;
+        height: 50px;
+        background-color: chartreuse;
         float: left;
+    }
+    section {
+        display: block;
+        /* height: 150px; */
         background-color: crimson;
+        /* float: left; */
+    }
+    aside {
+        display: inline-block;
+        width: 100%;
+        height: 150px;
+        background-color: yellow;
+        
+    }
+    footer {
+        background-color: cadetblue;
+        
     }
 </style>
 <body>
-    <div id="header" class="container border">
-        <div class="input-group mt-1 mb-1 container-fluid">
-            <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
-            <input type="text" placeholder="검색할 단어" width="150px" >
-            <button class="btn btn-primary" type="button">검색</button>
+    <header>
+        <div class="row mt-1">
+            <div class="col"></div>
+            <div class="col">
+                <!-- <input type="text" title="abc"><button class="btn btn-primary" type="button">검색</button> -->
+                <div class="input-group mt-1 mb-1 container-fluid">
+                    <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" class="form-control" placeholder="검색할 단어" width="200px" >
+                    <button class="btn btn-primary" type="button">검색</button>
+                </div>
+            </div>
+            <div class="col"></div>
         </div>
-    </div>
-    <div class="container border" style="width: 100%;">
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <div class="container-fluid" >
+    </header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid" >
             <ul class="navbar-nav">
                 <a class="navbar-brand" href="#">
-                    <img src="./img/img_logo2.png" alt="Logo" style="height: 36px;">
+                    <img src="./img/img_logo2.png" alt="Logo" style="height: 36px; border-radius: 20%;">
                 </a>
                 <li class="nav-item ms-3">
                     <a class="nav-link " href="#">
@@ -49,29 +83,28 @@
                         <i class="fa-solid fa-user-group"></i>일정표</a>
                 </li>
                 <li class="nav-item dropdown me-3">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
-                            <i class="fa-solid fa-brain"></i>인공지능</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Link</a></li>
-                                <li><a class="dropdown-item" href="#">Another link</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">A third link</a></li>
-                            </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-                <span class="navbar-text me-3">홍길동님 환영합니다</span>
-                <button click="#">logout</button>
-            </div>
-        </nav>
-    </div>
-    <div class="row my-3>
-        <div class="col"> 
-            <img src="./img/img_lights.jpg" class="rounded" alt="my picture" style="width:340px; height: 255px;"> 
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-brain"></i>인공지능</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Link</a></li>
+                            <li><a class="dropdown-item" href="#">Another link</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">A third link</a></li>
+                        </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            <span class="navbar-text me-1 justify-content-right">홍길동님 환영합니다</span>
+            <button click="#">logout</button>
         </div>
-        <div class="col"> 
+    </nav>
+    <section>
+        <div style="display: inline-block; width: 59%; background-color: darkorchid;">
+            <img src="./img/img_lights.jpg" class="rounded" alt="my picture" style="width:100%; height: 255px;"> 
+        </div>
+        <div style="display: inline-block; width: 40%;">
             <form action="/" method="get">
                 <table class="table table-borderless">
                 <tr>
@@ -90,21 +123,14 @@
                 </table>
             </form>
         </div>
-    </div>
-    <div class="row my-3">
-        <div class="col">container1</div>
-        <div class="col">container2</div>
-        <div class="col">container3</div>
-        <!-- <img src="./img/london2.jpg"  class="rounded" alt="london" width="300px" height="200px">
-        <img src="./img/chicago.jpg"  class="rounded" alt="chicago" width="300px" height="200px">
-        <img src="./img/Hungary.jfif" class="rounded" alt="Hungary" width="300px" height="200px"> -->
-    </div>
-    <nav class="navbar navbar-expand-sm bg-light fixed-bottom">
+    </section>
+    <aside>ddd</aside>
+    <footer class="navbar navbar-expand-sm bg-light fixed-bottom">
         <div class="container-fluid justify-content-center">
             <span class="navbar-text">
                 Copyright &copy; 2021-2024 휴먼교육 Corp. All rights reserved.
             </span>
         </div>
-    </nav>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/88fb115cbb.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        width: 100%;
+        height: 1024px;
+        /* border: 1px solid; */
+        margin: 0px;
+    }
+    header {
+        display: inline-block;
+        width: 100%;
+        height: 100px;
+        background-color: darkgray;
+        padding-top: 20px;
+        box-sizing: border-box;
+    }
+    nav {
+        display: inline-block;
+        width: 100%;
+        height: 54px;
+        /* background-color: gray; */
+        /* border: 1px solid; */
+    }
+    section {
+        /* display: inline-block; */
+        float: left;
+        width: 70%;
+        height: 400px;
+        background-color: gray;
+        padding-top: 0px;
+        padding-left: 0px;
+        box-sizing: border-box;
+    }
+    aside {
+        /* display: inline-block; */
+        float: left;
+        width: 30%;
+        height: 400px;
+        background-color: gray;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    aside div {
+        width: 301px;
+        height: 200px;
+        margin: 0px auto;
+        background-color: white;
+        box-sizing: border-box;
+    }
+    #display {
+        /* display: inline-block; */
+        width: 100%;
+        height: 200px;
+        /* background-color: brown; */
+    }
+    footer {
+        display: block;
+        width: 100%;
+        /* height: 35px; */
+        /* border: 1px dotted; */
+        text-align: center;
+        background-color: gray;
+    }
+    .header_01 {
+        width: 1000px;
+        height: 30px;
+        /* border: 1px solid; */
+        text-align: center;
+        margin: 0px auto;
+        font-size: 1vmax;
+    }
+    .header_01 h2 {
+        display: inline;
+        color: white;
+        vertical-align: text-top;
+    }
+    .header_02 {
+        width: 1000px;
+        height: 30px;
+        /* border: 1px solid; */
+        text-align: center;
+        margin: 0px auto;
+    }
+    nav ul {
+        /* border: 1px solid; */
+        margin-top: 2px;
+    }
+
+    ul.horizontal {list-style-type:none; margin: 0; padding: 0; overflow: hidden;
+        background-color: #333;}
+    li.horizontal {float: left;}
+    li.horizontal a {display: block; color: white; text-align: center;
+        padding: 14px 16px; text-decoration: none;}
+    li.horizontal a:hover:not(.active) {background-color: #111;}
+    li.active {background-color: #04AA6D;}
+
+    .display_01 {
+        margin-top: 10px;
+        width: 20%;
+        height: 150px;
+        margin-left: 10px;
+        float: left;
+        border: 1px solid;
+    }
+    table {
+        /* border: 1px solid; */
+        width: 300px;
+        height: 200px;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+    td {
+        text-align: center;
+    }
+    th {
+        text-align: center;
+        color: white;
+        background-color: #6c7ae0;
+    }
+    div.gallery {margin: 5px; border: 1px solid #ccc; float: left; width: 303px;}
+    div.gallerytext {margin: 5px; border: 1px solid #ccc; float: left; width: 290px;}
+    div.gallery:hover {border: 1px solid #777;}
+    div.gallery img {width: 100%; height: auto;}
+    div.desc {padding: 15px; text-align: center;}
+
+    table.tb { border: 2px solid; border-collapse:collapse; text-align: center; width: auto;}
+    tr.tr {border: 1px solid; padding: 10px 5px;}
+    th.th {background-color: teal; color: white;}
+    td.td {border: 1px solid; padding: 10px 5px;}
+</style>
+<body>
+    <header>
+        <div class="header_01">
+            <h2>Java Progream HTML</h2>
+        </div>
+        <div class="header_02">
+            <form action="" method="">
+                <input type="text" size="50">
+                <input type="submit" value="search">
+            </form>
+        </div>
+    </header>
+    <nav>
+        <ul class="horizontal">
+            <li class="horizontal"><a href="#" style="padding: 14px 16px; "><img src="./img/img_logo2.png" alt="Home Logo" style="height: 20px; border-radius: 20%;"></a></li>
+            <li class="horizontal"><a href="#"><i class="fa-solid fa-table-list"></i> 게시판</a></li>
+            <li class="horizontal"><a href="#"><i class="fa-solid fa-user-group"></i> 일정표</a></li>
+            <li class="horizontal"><a href="#"><i class="fa-solid fa-brain"></i> 인공지능</a></li>
+            <li class="horizontal" style="float: right;">
+                    <a class="active" href="#"><i class="fa-solid fa-exclamation"></i> About</a></li>
+        </ul>
+    </nav>
+    <div style="display: inline-block; width: 100%;">
+    <section>
+        <div>
+            <!-- <p style="border-radius: 15px; width: 100%; height: 370px; padding: 5px; box-sizing: border-box;">
+                <img src="./img/img_lights.jpg" alt="그림" width="100%" height="100%">
+            </p> -->
+            <form action="">
+                <table class="tb">
+                    <tr class="tr">
+                        <th class="th">스케줄ID</th>
+                        <th class="th">출발시간</th>
+                        <th class="th">출발역  </th>
+                        <th class="th">도착역  </th>
+                        <th class="th">기차명  </th>
+                        <th class="th">가격    </th>
+                    </tr>
+                    <tr class="tr">
+                        <td class="td"></td>
+                        <td class="td"></td>
+                        <td class="td"></td>
+                        <td class="td"></td>
+                        <td class="td"></td>
+                        <td class="td"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </section>
+    <aside>
+        <div>
+            <form action="" method="">
+            <table>
+                <tr><th colspan="2">회원이 되어 주셔서 감사합니다</th></tr>
+                <tr><td>사용자ID</td><td><input type="text"></td></tr>
+                <tr><td>패스워드</td><td><input type="password"></td></tr>
+                <tr><td colspan="2">
+                    <input type="button" value="가입">
+                    <input type="submit" value="로그인">
+                    </td></tr>
+            </table>
+            </form>
+        </div>
+    </aside>
+    </div>
+    <div id="display" style="height: 250px;">
+        <div class="gallery">
+            <a href="#">
+                <img src="http://picsum.photos/300/200?q=1" alt="random" width="600" height="400">
+            </a>
+            <div class="gallerytext">사진을 설명해 보세요.</div>
+        </div>
+        <div class="gallery">
+            <a href="#">
+                <img src="http://picsum.photos/300/200?q=2" alt="random" width="600" height="400">
+            </a>
+            <div class="gallerytext">사진을 설명해 보세요.</div>
+        </div>
+        <div class="gallery">
+            <a href="#">
+                <img src="http://picsum.photos/300/200?q=3" alt="random" width="600" height="400">
+            </a>
+            <div class="gallerytext">사진을 설명해 보세요.</div>
+        </div>
+        <div class="gallery">
+            <a href="#">
+                <img src="http://picsum.photos/300/200?q=4" alt="random" width="600" height="400">
+            </a>
+            <div class="gallerytext">사진을 설명해 보세요.</div>
+        </div>
+    </div>
+    <footer>Copyright &copy; 2024-2025 Myung-kyun Lee All rights reserved.</footer>
+</body>
+</html>

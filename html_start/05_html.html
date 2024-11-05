@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JAVA div answer</title>
 </head>
 <style>
     body {
-        width: 1280px;
+        width: 1256px;
         height: 1020px;
         border: 1px solid;
         margin: 0px;
@@ -16,13 +16,13 @@
     header {
         /* display: inline-block; */
         width: 100%;
-        height: 50px;
+        height: 45px;
         background-color: blueviolet;
         /* float: left; */
-        padding-left: 20px;
+        /* padding-left: 20px; */
     }
     header div {
-        margin-left: 100px;
+        margin-left: 0px;
         /* display: inline-block; */
     }
     nav {
@@ -34,12 +34,12 @@
     }
     section {
         display: block;
-        height: 150px;
+        /* height: 150px; */
         background-color: crimson;
         /* float: left; */
     }
     aside {
-        /* display: inline-block; */
+        display: inline-block;
         width: 100%;
         height: 150px;
         background-color: yellow;
@@ -47,21 +47,87 @@
     }
     footer {
         background-color: cadetblue;
-        /* float: inline-end; */
+        
     }
 </style>
 <body>
     <header>
-        <div>
-            <input type="text" title="abc"><button class="btn btn-primary" type="button">검색</button>
+        <div class="row mt-1">
+            <div class="col"></div>
+            <div class="col">
+                <!-- <input type="text" title="abc"><button class="btn btn-primary" type="button">검색</button> -->
+                <div class="input-group mt-1 mb-1 container-fluid">
+                    <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" class="form-control" placeholder="검색할 단어" width="200px" >
+                    <button class="btn btn-primary" type="button">검색</button>
+                </div>
+            </div>
+            <div class="col"></div>
         </div>
     </header>
-    <nav>nav</nav>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid" >
+            <ul class="navbar-nav">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/img_logo2.png" alt="Logo" style="height: 36px;">
+                </a>
+                <li class="nav-item ms-3">
+                    <a class="nav-link " href="#">
+                        <i class="fa-solid fa-table-list"></i>게시판</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-user-group"></i>일정표</a>
+                </li>
+                <li class="nav-item dropdown me-3">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-brain"></i>인공지능</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Link</a></li>
+                            <li><a class="dropdown-item" href="#">Another link</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">A third link</a></li>
+                        </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            <span class="navbar-text me-1 justify-content-right">홍길동님 환영합니다</span>
+            <button click="#">logout</button>
+        </div>
+    </nav>
     <section>
-        <div style="display: inline-block; width: 59%; background-color: darkorchid;">1111</div>
-        <div style="display: inline-block; width: 40%;">2222</div>
+        <div style="display: inline-block; width: 59%; background-color: darkorchid;">
+            <img src="./img/img_lights.jpg" class="rounded" alt="my picture" style="width:100%; height: 255px;"> 
+        </div>
+        <div style="display: inline-block; width: 40%;">
+            <form action="/" method="get">
+                <table class="table table-borderless">
+                <tr>
+                    <td><label for="uid2" class="col-form-label">사용자 ID</label></td>
+                    <td><input type="text" class="form-control" name="uid2" id="uid2" placeholder="사용자 ID를 입력하세요"></td>
+                </tr>
+                <tr>
+                    <td><label for="pwd2" class="col-form-label">패스워드 ID</label></td>
+                    <td><input type="password" class="form-control" name="pwd" id="pwd" placeholder="패스워드를 입력하세요"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                    <button type="submit" class="btn btn-primary me-3">로그인</button>
+                    </td>
+                </tr>
+                </table>
+            </form>
+        </div>
     </section>
     <aside>ddd</aside>
-    <footer>Copyright &copy; 2021-2024 휴먼교육 Corp. All rights reserved.</footer>
+    <footer class="navbar navbar-expand-sm bg-light fixed-bottom">
+        <div class="container-fluid justify-content-center">
+            <span class="navbar-text">
+                Copyright &copy; 2021-2024 휴먼교육 Corp. All rights reserved.
+            </span>
+        </div>
+    </footer>
 </body>
 </html>
