@@ -272,7 +272,6 @@
 </body>
 
 <script>
-    var intext = document.getElementById("hidden").innerHTML;
 
     function formatCurrency(num) {
         num = num.toString().replace(/\$|\,/g,'');
@@ -311,28 +310,30 @@
         cell4.innerHTML = goodsPrice;
         cell5.innerHTML = goodsDlv;
 
-        // 선택상품금액
-        let goodsCnts = document.getElementById("goodsCnt").value;
-        let allgoods = document.getElementById("allGoods").innerHTML;
-        if (allgoods == "") allgoods = "0";
-        allgoods = allgoods.replace("원","");
-        allgoods = allgoods.replace(",","");
-        allgoods = eval(allgoods) + eval(cell4.innerHTML) * eval(goodsCnts);
-        document.getElementById("allGoods").innerHTML = formatCurrency(allgoods);
-        // 총배송비
-        let allDlvs = document.getElementById("allDlv").innerHTML;
-        if (allDlvs == "") allDlvs = "0";
-        allDlvs = allDlvs.replace("원","");
-        allDlvs = allDlvs.replace(",","");
-        allDlvs = eval(allDlvs) + eval(cell5.innerHTML);
-        document.getElementById("allDlv").innerHTML = formatCurrency(allDlvs);
-        // 주문금액
-        let allpris = document.getElementById("allPri").innerHTML;
-        if (allpris == "") allpris = "0";
-        allpris = allpris.replace("원","");
-        allpris = allpris.replace(",","");
-        allpris = eval(allgoods) + eval(allDlvs);
-        document.getElementById("allPri").innerHTML = formatCurrency(allpris);
+        // // 선택상품금액
+        // let goodsCnts = document.getElementById("goodsCnt").value;
+        // let allgoods = document.getElementById("allGoods").innerHTML;
+        // if (allgoods == "") allgoods = "0";
+        // allgoods = allgoods.replace("원","");
+        // allgoods = allgoods.replace(",","");
+        // allgoods = eval(allgoods) + eval(cell4.innerHTML) * eval(goodsCnts);
+        // document.getElementById("allGoods").innerHTML = formatCurrency(allgoods);
+        // // 총배송비
+        // let allDlvs = document.getElementById("allDlv").innerHTML;
+        // if (allDlvs == "") allDlvs = "0";
+        // allDlvs = allDlvs.replace("원","");
+        // allDlvs = allDlvs.replace(",","");
+        // allDlvs = eval(allDlvs) + eval(cell5.innerHTML);
+        // document.getElementById("allDlv").innerHTML = formatCurrency(allDlvs);
+        // // 주문금액
+        // let allpris = document.getElementById("allPri").innerHTML;
+        // if (allpris == "") allpris = "0";
+        // allpris = allpris.replace("원","");
+        // allpris = allpris.replace(",","");
+        // allpris = eval(allgoods) + eval(allDlvs);
+        // document.getElementById("allPri").innerHTML = formatCurrency(allpris);
+
+        cal_total();
 
         // 입력값 초기화
         document.getElementById("goodsInfo").value = "";
@@ -341,8 +342,6 @@
         document.getElementById("goodsDlv").value = "";
         // 장바구니 메시지 숨김
         document.getElementById("hidden").hidden = true;
-        // document.getElementById("hidden").innerHTML = "";
-        // document.getElementById("hidden").style.display = "none";
     }
     function allChk1() {
         let allChks = document.getElementById("allChk").checked;
@@ -352,42 +351,75 @@
             }
         }
     }
+    function cal_total() {
+      var allgoodss = document.getElementById("allGoods").innerHTML;
+      var allDlvs = document.getElementById("allDlv").innerHTML;
+      var allpris = document.getElementById("allPri").innerHTML;
 
+      if (allgoodss == "") {
+        allgoodss = "0";
+        allDlvs = "0";
+        allpris = "0";
+      } else {
+        allgoodss = allgoodss.replace("원",""); allgoodss = allgoodss.replace(",","");
+        allDlvs = allDlvs.replace("원","");   allDlvs = allDlvs.replace(",","");
+        allpris = allpris.replace("원","");   allpris = allpris.replace(",","");
+      }
+      var goodsCnts="", goodsPrice="", goodsDlv="";
+
+      if (cart__list.rows.length > 0) {
+          for (let i=0; i<cart__list.rows.length; i++) {
+              goodsCnts = cart__list.rows[i].cells[2].innerHTML;
+              goodsPrice = cart__list.rows[i].cells[3].innerHTML;
+              goodsDlv = cart__list.rows[i].cells[4].innerHTML;
+              goodsPrice = goodsPrice.replace("원",""); goodsPrice = goodsPrice.replace(",","");
+              goodsDlv = goodsDlv.replace("원","");     goodsDlv = goodsDlv.replace(",","");
+              // 선택상품금액
+              allgoodss = eval(allgoodss) + eval(goodsPrice) * eval(goodsCnts);
+              // 총배송비
+              allDlvs = eval(allDlvs) + eval(goodsDlv);
+              // 주문금액
+              allpris = eval(allgoodss) + eval(allDlvs);
+          }
+          document.getElementById("allGoods").innerHTML = formatCurrency(allgoodss);
+          document.getElementById("allDlv").innerHTML = formatCurrency(allDlvs);
+          document.getElementById("allPri").innerHTML = formatCurrency(allpris);
+      }
+    }
     function delRow() {
       var checked_cnt=0;
         if (cart__list.rows.length > 0) {
             for (let i=0; i<cart__list.rows.length; i++) {
                 if (cart__list.rows[i].cells[0].children[0].checked) {
-                    // 선택상품금액
-                    let goodsCnts = cart__list.rows[i].cells[2].innerHTML;
-                    let goodsPrice = cart__list.rows[i].cells[3].innerHTML;
-                    let allgoods = document.getElementById("allGoods").innerHTML;
-                    allgoods = allgoods.replace("원","");
-                    allgoods = allgoods.replace(",","");
-                    allgoods = eval(allgoods) - eval(goodsPrice) * eval(goodsCnts);
-                    document.getElementById("allGoods").innerHTML = formatCurrency(allgoods);
-                    // 총배송비
-                    let goodsDlv = cart__list.rows[i].cells[4].innerHTML;
-                    let allDlvs = document.getElementById("allDlv").innerHTML;
-                    allDlvs = allDlvs.replace("원","");
-                    allDlvs = allDlvs.replace(",","");
-                    allDlvs = eval(allDlvs) - eval(goodsDlv);
-                    document.getElementById("allDlv").innerHTML = formatCurrency(allDlvs);
-                    // 주문금액
-                    let allpris = document.getElementById("allPri").innerHTML;
-                    allpris = allpris.replace("원","");
-                    allpris = allpris.replace(",","");
-                    if (allpris == "") allpris = "0";
-                    allpris = eval(allgoods) + eval(allDlvs);
-                    document.getElementById("allPri").innerHTML = formatCurrency(allpris);
+                    // // 선택상품금액
+                    // let goodsCnts = cart__list.rows[i].cells[2].innerHTML;
+                    // let goodsPrice = cart__list.rows[i].cells[3].innerHTML;
+                    // let allgoods = document.getElementById("allGoods").innerHTML;
+                    // allgoods = allgoods.replace("원","");
+                    // allgoods = allgoods.replace(",","");
+                    // allgoods = eval(allgoods) - eval(goodsPrice) * eval(goodsCnts);
+                    // document.getElementById("allGoods").innerHTML = formatCurrency(allgoods);
+                    // // 총배송비
+                    // let goodsDlv = cart__list.rows[i].cells[4].innerHTML;
+                    // let allDlvs = document.getElementById("allDlv").innerHTML;
+                    // allDlvs = allDlvs.replace("원","");
+                    // allDlvs = allDlvs.replace(",","");
+                    // allDlvs = eval(allDlvs) - eval(goodsDlv);
+                    // document.getElementById("allDlv").innerHTML = formatCurrency(allDlvs);
+                    // // 주문금액
+                    // let allpris = document.getElementById("allPri").innerHTML;
+                    // allpris = allpris.replace("원","");
+                    // allpris = allpris.replace(",","");
+                    // if (allpris == "") allpris = "0";
+                    // allpris = eval(allgoods) + eval(allDlvs);
+                    // document.getElementById("allPri").innerHTML = formatCurrency(allpris);
 
                     cart__list.deleteRow(i);
                     i--;
+                    cal_total();
                     // 장바구니 메시지 보이기
-                    if (allpris == 0) {
+                    if (cart__list.rows.length == 0) {
                       document.getElementById("hidden").hidden = false;
-                      // document.getElementById("hidden").style.display = "block";
-                      // document.getElementById("hidden").innerHTML = intext;
                     }
                     checked_cnt++;
                     document.getElementById("allChk").checked = false;
